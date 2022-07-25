@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dbinsertconnection", "dbinsertconnection\dbinsertconnection.csproj", "{4C763605-C3A2-45FD-B8E7-648BAA3EC15D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C763605-C3A2-45FD-B8E7-648BAA3EC15D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C763605-C3A2-45FD-B8E7-648BAA3EC15D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C763605-C3A2-45FD-B8E7-648BAA3EC15D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C763605-C3A2-45FD-B8E7-648BAA3EC15D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4AA578C3-ABAE-4C3D-8F55-1CBB6039E722}
+	EndGlobalSection
+EndGlobal
