@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace dbinsertconnection
 {
@@ -65,6 +66,8 @@ namespace dbinsertconnection
                     MessageBox.Show("Problem with Data Saving");
                 }
 
+                BindStudentGridView();
+
             }
             catch (Exception exception)
             {
@@ -78,6 +81,42 @@ namespace dbinsertconnection
         {
             Random random = new Random();
             return random.Next(2,1000);
+        }
+
+        private void BindStudentGridView()
+        {
+            string databaseConnection = $@"data source=Naveen;initial catalog=ADONET;persist security info=True; Integrated Security=SSPI";
+
+            SqlConnection studentDatabaseConnection = new SqlConnection(databaseConnection);
+            studentDatabaseConnection.Open();
+            SqlCommand selectsqlCommand = new SqlCommand();
+            selectsqlCommand.Connection = studentDatabaseConnection;
+            selectsqlCommand.CommandType = System.Data.CommandType.Text;
+            selectsqlCommand.CommandText = @"SELECT Id,
+                                            StudentName,
+                                            Telugu,
+                                            English,
+                                            Total
+                                            FROM 
+                                            MyPractise";
+
+            var results = selectsqlCommand.ExecuteReader();
+
+            List<StudentMarks> studentList = new List<StudentMarks>();
+            while (results.Read())
+            {
+                StudentMarks student = new StudentMarks();
+
+                student.Id = Convert.ToInt32(results["Id"]);
+                student.StudentName = results["StudentName"].ToString();
+                student.Telugu = Convert.ToInt32(results["Telugu"]);
+                student.English = Convert.ToInt32(results["English"]);
+                student.Total = Convert.ToInt32(results["Total"]);
+
+                studentList.Add(student);
+
+            }
+            studentGridView.DataSource = studentList;
         }
     }
 }

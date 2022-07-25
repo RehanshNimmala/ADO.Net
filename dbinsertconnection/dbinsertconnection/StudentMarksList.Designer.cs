@@ -35,6 +35,8 @@
             this.txtTeluguMarks = new System.Windows.Forms.TextBox();
             this.txtEnglishMarks = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.studentGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.studentGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // lblStudentName
@@ -98,11 +100,22 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
+            // studentGridView
+            // 
+            this.studentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.studentGridView.Location = new System.Drawing.Point(576, 64);
+            this.studentGridView.Name = "studentGridView";
+            this.studentGridView.RowHeadersWidth = 51;
+            this.studentGridView.RowTemplate.Height = 24;
+            this.studentGridView.Size = new System.Drawing.Size(796, 374);
+            this.studentGridView.TabIndex = 9;
+            // 
             // StudentMarksSheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1087, 450);
+            this.ClientSize = new System.Drawing.Size(1384, 450);
+            this.Controls.Add(this.studentGridView);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtEnglishMarks);
             this.Controls.Add(this.txtTeluguMarks);
@@ -112,6 +125,7 @@
             this.Controls.Add(this.lblStudentName);
             this.Name = "StudentMarksSheet";
             this.Text = "Student Marks Sheet";
+            ((System.ComponentModel.ISupportInitialize)(this.studentGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,6 +140,7 @@
         private System.Windows.Forms.TextBox txtTeluguMarks;
         private System.Windows.Forms.TextBox txtEnglishMarks;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.DataGridView studentGridView;
     }
 }
 
