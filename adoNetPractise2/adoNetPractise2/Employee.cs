@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace adoNetPractise2
 {
@@ -54,6 +55,7 @@ namespace adoNetPractise2
                     MessageBox.Show("ERROR!Data not saved. ");
 
                 }
+                BindGridView();
             }
             catch (Exception Error)
             {
@@ -68,7 +70,37 @@ namespace adoNetPractise2
             return random.Next(2, 1000);
         }
 
+        private void BindGridView()
+        {
+            string databaseConnection = $@"data source=Naveen;initial catalog=ADONET;
+                                persist security info=True;integrated security=SSPI;";
+            SqlConnection employeeConnection= new SqlConnection(databaseConnection);
+            employeeConnection.Open();
+            SqlCommand employeeCommand= new SqlCommand();
+            employeeCommand.CommandType= System.Data.CommandType.Text;
+            employeeCommand.Connection = employeeConnection;
+            employeeCommand.CommandText=@"SELECT
+                                            Emp_Id,
+                                            Emp_Name ,
+                                            Department ,
+                                            ContactDetails 
+                                            FROM EMPLOYEE";
+            var results=employeeCommand.ExecuteReader();
+            List<Employee> employeeDetails = new List<Employee>();
+            while( results.Read())
+            {
+                Employee employeeView = new Employee();
+                employeeView.EmployeeID = Convert.ToInt32(results["Emp_Id"]);
+                employeeView.EmployeeName = results["Emp_Name"].ToString();
+                employeeView.Department = results["Department"].ToString();
+                employeeView.ContactDetails =results["ContactDetails"].ToString();
 
+                employeeDetails.Add(employeeView);
+            }
+            employeeGridView.DataSource=employeeDetails;
+
+
+        }
 
     }
 }
