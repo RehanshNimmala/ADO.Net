@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblEmployeeName = new System.Windows.Forms.Label();
             this.lblDepartment = new System.Windows.Forms.Label();
             this.lblContactNumber = new System.Windows.Forms.Label();
@@ -37,7 +38,13 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.employeeGridView = new System.Windows.Forms.DataGridView();
             this.btnReset = new System.Windows.Forms.Button();
+            this.erpEmployeeName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpDepartment = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpContactNumber = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.employeeGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpEmployeeName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDepartment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpContactNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEmployeeName
@@ -74,6 +81,7 @@
             this.txtEmployeeName.Name = "txtEmployeeName";
             this.txtEmployeeName.Size = new System.Drawing.Size(228, 22);
             this.txtEmployeeName.TabIndex = 3;
+            this.txtEmployeeName.Validating += new System.ComponentModel.CancelEventHandler(this.validatingEmployeeName);
             // 
             // txtDepartment
             // 
@@ -82,6 +90,7 @@
             this.txtDepartment.Name = "txtDepartment";
             this.txtDepartment.Size = new System.Drawing.Size(228, 22);
             this.txtDepartment.TabIndex = 4;
+            this.txtDepartment.Validating += new System.ComponentModel.CancelEventHandler(this.validatingDepartment);
             // 
             // txtContactNumber
             // 
@@ -90,6 +99,7 @@
             this.txtContactNumber.Name = "txtContactNumber";
             this.txtContactNumber.Size = new System.Drawing.Size(228, 22);
             this.txtContactNumber.TabIndex = 5;
+            this.txtContactNumber.Validating += new System.ComponentModel.CancelEventHandler(this.validatingContactNumber);
             // 
             // btnSubmit
             // 
@@ -121,6 +131,18 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // erpEmployeeName
+            // 
+            this.erpEmployeeName.ContainerControl = this;
+            // 
+            // erpDepartment
+            // 
+            this.erpDepartment.ContainerControl = this;
+            // 
+            // erpContactNumber
+            // 
+            this.erpContactNumber.ContainerControl = this;
+            // 
             // EmployeeDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -138,6 +160,9 @@
             this.Name = "EmployeeDetails";
             this.Text = "Employee Details";
             ((System.ComponentModel.ISupportInitialize)(this.employeeGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpEmployeeName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDepartment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpContactNumber)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,6 +179,9 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.DataGridView employeeGridView;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.ErrorProvider erpEmployeeName;
+        private System.Windows.Forms.ErrorProvider erpDepartment;
+        private System.Windows.Forms.ErrorProvider erpContactNumber;
     }
 }
 

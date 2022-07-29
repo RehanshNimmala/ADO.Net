@@ -111,6 +111,68 @@ namespace adoNetPractise2
             employeeGridView.Rows.Clear();
 
         }
+
+        private void validatingEmployeeName(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if(txtEmployeeName.Text.Length>0)
+            {
+                erpEmployeeName.SetError(txtEmployeeName, "");
+            }
+            else
+            {
+                erpEmployeeName.SetError(txtEmployeeName, "Please enter Employee Name");
+                txtEmployeeName.Focus();
+                txtEmployeeName.SelectAll();
+                return;
+            }
+        }
+
+
+        private void validatingDepartment(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if(string.IsNullOrEmpty(txtDepartment.Text))
+            {
+                e.Cancel = true;
+                txtDepartment.Focus();
+                erpDepartment.SetError(txtDepartment, "Please enter Department Name");
+
+            }
+            else
+            {
+                e.Cancel=false;
+                erpDepartment.SetError(txtDepartment, null);
+
+            }
+
+        }
+
+        private void validatingContactNumber(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            //if(int.Parse.IsNullOrEmpty(txtContactNumber.Text))
+            //{
+            //    e.Cancel=true;
+            //    txtContactNumber.Focus();
+            //    erpContactNumber.SetError(txtContactNumber, "Please provide the contact Number");
+
+            //}
+            //else
+            //{
+            //    e.Cancel= false;
+            //    erpContactNumber.SetError(txtContactNumber, null);
+            //}
+            if (txtContactNumber.Text.Length > 0)
+            {
+                erpContactNumber.SetError(txtContactNumber, "");
+            }
+            else
+            {
+                erpContactNumber.SetError(txtContactNumber, "Please enter Employee Name");
+                txtContactNumber.Focus();
+                txtContactNumber.SelectAll();
+                return;
+            }
+
+        }
     }
 }
 
