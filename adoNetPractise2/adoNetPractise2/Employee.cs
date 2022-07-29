@@ -102,6 +102,15 @@ namespace adoNetPractise2
 
         }
 
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtEmployeeName.Text = "";
+            txtDepartment.Text = "";
+            txtContactNumber.Text = "";
+            employeeGridView.DataSource = null;
+            employeeGridView.Rows.Clear();
+
+        }
     }
 }
 
