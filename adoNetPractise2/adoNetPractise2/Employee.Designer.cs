@@ -36,6 +36,7 @@
             this.txtContactNumber = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.employeeGridView = new System.Windows.Forms.DataGridView();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.employeeGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,7 +93,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(507, 79);
+            this.btnSubmit.Location = new System.Drawing.Point(494, 38);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(269, 65);
             this.btnSubmit.TabIndex = 6;
@@ -110,11 +111,22 @@
             this.employeeGridView.Size = new System.Drawing.Size(764, 196);
             this.employeeGridView.TabIndex = 7;
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(494, 134);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(282, 65);
+            this.btnReset.TabIndex = 8;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // EmployeeDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.employeeGridView);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtContactNumber);
@@ -141,6 +153,7 @@
         private System.Windows.Forms.TextBox txtContactNumber;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.DataGridView employeeGridView;
+        private System.Windows.Forms.Button btnReset;
     }
 }
 
