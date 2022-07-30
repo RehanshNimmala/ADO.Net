@@ -99,7 +99,7 @@
             this.txtContactNumber.Name = "txtContactNumber";
             this.txtContactNumber.Size = new System.Drawing.Size(228, 22);
             this.txtContactNumber.TabIndex = 5;
-            this.txtContactNumber.Validating += new System.ComponentModel.CancelEventHandler(this.validatingContactNumber);
+           // this.txtContactNumber.Validating += new System.ComponentModel.CancelEventHandler(this.validatingContactNumber);
             // 
             // btnSubmit
             // 

@@ -14,13 +14,21 @@ namespace adoNetPractise2
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+
+           
             try
             {
                 //get the variables
                 string employeeName = txtEmployeeName.Text;
                 string department = txtDepartment.Text;
-                int contactNumber = int.Parse(txtContactNumber.Text);
-                int employeeId = GetRandomId();
+                int contactNumber = ExtractValidIntegerFromText();
+                //if (contactNumber<=0)
+               // {
+               //     MessageBox.Show("please enter a valid number");
+               // }
+                int employeeId = GetRandomId();             
+
+
 
                 //Establish connection string
                 string dbConncection = $@"data source=Naveen;Initial catalog=ADONET; 
@@ -57,11 +65,15 @@ namespace adoNetPractise2
                 }
                 BindGridView();
             }
+
             catch (Exception Error)
             {
 
                 MessageBox.Show("Something went wrong, Please contact administrator " + Error.Message);
             }
+             //ExtractValidIntegerFromText()
+           
+
 
         }
         private int GetRandomId()
@@ -146,32 +158,39 @@ namespace adoNetPractise2
 
         }
 
-        private void validatingContactNumber(object sender, System.ComponentModel.CancelEventArgs e)
+        //private void validatingContactNumber(object sender, System.ComponentModel.CancelEventArgs e)
+        //{
+        //    //if(int.Parse.IsNullOrEmpty(txtContactNumber.Text))
+        //    //{
+        //    //    e.Cancel=true;
+        //    //    txtContactNumber.Focus();
+        //    //    erpContactNumber.SetError(txtContactNumber, "Please provide the contact Number");
+
+        //    //}
+        //    //else
+        //    //{
+        //    //    e.Cancel= false;
+        //    //    erpContactNumber.SetError(txtContactNumber, null);
+        //    //}
+        //    if (txtContactNumber.Text.Length > 0)
+        //    {
+        //        erpContactNumber.SetError(txtContactNumber, "");
+        //    }
+        //    else
+        //    {
+        //        erpContactNumber.SetError(txtContactNumber, "Please enter Employee Name");
+        //        txtContactNumber.Focus();
+        //        txtContactNumber.SelectAll();
+        //        return;
+        //    }
+        
+        private int ExtractValidIntegerFromText()
         {
-            //if(int.Parse.IsNullOrEmpty(txtContactNumber.Text))
-            //{
-            //    e.Cancel=true;
-            //    txtContactNumber.Focus();
-            //    erpContactNumber.SetError(txtContactNumber, "Please provide the contact Number");
 
-            //}
-            //else
-            //{
-            //    e.Cancel= false;
-            //    erpContactNumber.SetError(txtContactNumber, null);
-            //}
-            if (txtContactNumber.Text.Length > 0)
-            {
-                erpContactNumber.SetError(txtContactNumber, "");
-            }
-            else
-            {
-                erpContactNumber.SetError(txtContactNumber, "Please enter Employee Name");
-                txtContactNumber.Focus();
-                txtContactNumber.SelectAll();
-                return;
-            }
-
+            bool isvalid = int.TryParse(txtContactNumber.Text, out int contactNumber);
+            if(isvalid) return contactNumber;
+            return (int)MessageBox.Show("Please enter contact Number");
+                    
         }
     }
 }
