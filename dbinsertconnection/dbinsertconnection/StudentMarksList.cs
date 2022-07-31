@@ -135,5 +135,14 @@ namespace dbinsertconnection
             }
 
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtStudentName.Text = "";
+            txtTeluguMarks.Text = "";
+            txtEnglishMarks.Text = "";
+            studentGridView.DataSource = null;
+            studentGridView.Rows.Clear();
+        }
     }
 }
