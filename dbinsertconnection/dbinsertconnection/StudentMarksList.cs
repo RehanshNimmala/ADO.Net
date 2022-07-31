@@ -118,5 +118,22 @@ namespace dbinsertconnection
             }
             studentGridView.DataSource = studentList;
         }
+
+        
+        private void validatingStudentName(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (txtStudentName.Text.Length > 0)
+            {
+                erpStudentName.SetError(txtStudentName, "");
+            }
+            else
+            {
+                erpStudentName.SetError(txtStudentName, "Please enter the Student Name");
+                txtStudentName.Focus();
+                txtStudentName.SelectAll();
+                return;
+            }
+
+        }
     }
 }

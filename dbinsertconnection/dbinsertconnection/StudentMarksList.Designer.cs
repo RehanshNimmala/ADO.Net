@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblStudentName = new System.Windows.Forms.Label();
             this.txtStudentName = new System.Windows.Forms.TextBox();
             this.lblTeluguMarks = new System.Windows.Forms.Label();
@@ -36,7 +37,9 @@
             this.txtEnglishMarks = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.studentGridView = new System.Windows.Forms.DataGridView();
+            this.erpStudentName = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.studentGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpStudentName)).BeginInit();
             this.SuspendLayout();
             // 
             // lblStudentName
@@ -55,6 +58,7 @@
             this.txtStudentName.Name = "txtStudentName";
             this.txtStudentName.Size = new System.Drawing.Size(211, 22);
             this.txtStudentName.TabIndex = 1;
+            this.txtStudentName.Validating += new System.ComponentModel.CancelEventHandler(this.validatingStudentName);
             // 
             // lblTeluguMarks
             // 
@@ -110,6 +114,10 @@
             this.studentGridView.Size = new System.Drawing.Size(796, 374);
             this.studentGridView.TabIndex = 9;
             // 
+            // erpStudentName
+            // 
+            this.erpStudentName.ContainerControl = this;
+            // 
             // StudentMarksSheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -126,6 +134,7 @@
             this.Name = "StudentMarksSheet";
             this.Text = "Student Marks Sheet";
             ((System.ComponentModel.ISupportInitialize)(this.studentGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpStudentName)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,6 +150,7 @@
         private System.Windows.Forms.TextBox txtEnglishMarks;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.DataGridView studentGridView;
+        private System.Windows.Forms.ErrorProvider erpStudentName;
     }
 }
 
