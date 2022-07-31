@@ -38,6 +38,7 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.studentGridView = new System.Windows.Forms.DataGridView();
             this.erpStudentName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.studentGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpStudentName)).BeginInit();
             this.SuspendLayout();
@@ -96,7 +97,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(188, 273);
+            this.btnSubmit.Location = new System.Drawing.Point(12, 261);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(211, 53);
             this.btnSubmit.TabIndex = 7;
@@ -107,22 +108,33 @@
             // studentGridView
             // 
             this.studentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.studentGridView.Location = new System.Drawing.Point(576, 64);
+            this.studentGridView.Location = new System.Drawing.Point(503, 44);
             this.studentGridView.Name = "studentGridView";
             this.studentGridView.RowHeadersWidth = 51;
             this.studentGridView.RowTemplate.Height = 24;
-            this.studentGridView.Size = new System.Drawing.Size(796, 374);
+            this.studentGridView.Size = new System.Drawing.Size(682, 374);
             this.studentGridView.TabIndex = 9;
             // 
             // erpStudentName
             // 
             this.erpStudentName.ContainerControl = this;
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(276, 261);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(151, 53);
+            this.btnReset.TabIndex = 10;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // StudentMarksSheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 450);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.studentGridView);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtEnglishMarks);
@@ -151,6 +163,7 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.DataGridView studentGridView;
         private System.Windows.Forms.ErrorProvider erpStudentName;
+        private System.Windows.Forms.Button btnReset;
     }
 }
 
