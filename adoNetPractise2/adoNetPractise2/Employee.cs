@@ -7,11 +7,15 @@ namespace adoNetPractise2
 {
     public partial class EmployeeDetails : Form
     {
+
+        #region Constructor
         public EmployeeDetails()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region button click event handlers
         private void btnSubmit_Click(object sender, EventArgs e)
         {
 
@@ -19,41 +23,20 @@ namespace adoNetPractise2
             try
             {
                 //get the variables
-                string employeeName = txtEmployeeName.Text;
-                string department = txtDepartment.Text;
-                int contactNumber = ExtractValidIntegerFromText();
-                //if (contactNumber<=0)
-               // {
-               //     MessageBox.Show("please enter a valid number");
-               // }
-                int employeeId = GetRandomId();             
+
+                EmployeeCreation employeeCreation = new EmployeeCreation();
+
+                employeeCreation.EmployeeName = txtEmployeeName.Text;
+                employeeCreation.Department = txtDepartment.Text;
+                employeeCreation.ContactDetails = ExtractValidIntegerFromText();
+                employeeCreation.EmployeeID = GetRandomId();
 
 
+                EmployeeDataAccessLayer employeeDataAccessLayer = new EmployeeDataAccessLayer();
 
-                //Establish connection string
-                string dbConncection = $@"data source=Naveen;Initial catalog=ADONET; 
-                persist security info=True; Integrated security =SSPI";
+                int numberOfRowsEffected = employeeDataAccessLayer.
+                    SaveEmployeeDetails(employeeCreation);
 
-                //create object for sqlConnection
-                SqlConnection employeeConnection = new SqlConnection(dbConncection);
-                employeeConnection.Open();
-
-                //create command 
-                SqlCommand employeeCommand = new SqlCommand();
-                employeeCommand.Connection = employeeConnection;
-                employeeCommand.CommandType = System.Data.CommandType.Text;
-                employeeCommand.CommandText = $@"INSERT INTO Employee
-                                            (Emp_ID,
-                                            Emp_Name,
-                                            Department,
-                                            ContactDetails)
-                                            Values
-                                            ({employeeId},
-                                            '{employeeName}',
-                                            '{department}',
-                                            {contactNumber})";
-                int numberOfRowsEffected = employeeCommand.ExecuteNonQuery();
-                employeeConnection.Close();
                 if (numberOfRowsEffected > 0)
                 {
                     MessageBox.Show("data saved successfully");
@@ -76,12 +59,25 @@ namespace adoNetPractise2
 
 
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtEmployeeName.Text = "";
+            txtDepartment.Text = "";
+            txtContactNumber.Text = "";
+            employeeGridView.DataSource = null;
+            employeeGridView.Rows.Clear();
+
+        }
+
+        #endregion
+
+        #region private local methods
         private int GetRandomId()
         {
             Random random = new Random();
             return random.Next(2, 1000);
         }
-
         private void BindGridView()
         {
             string databaseConnection = $@"data source=Naveen;initial catalog=ADONET;
@@ -113,51 +109,7 @@ namespace adoNetPractise2
 
 
         }
-
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            txtEmployeeName.Text = "";
-            txtDepartment.Text = "";
-            txtContactNumber.Text = "";
-            employeeGridView.DataSource = null;
-            employeeGridView.Rows.Clear();
-
-        }
-
-        private void validatingEmployeeName(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            if(txtEmployeeName.Text.Length>0)
-            {
-                erpEmployeeName.SetError(txtEmployeeName, "");
-            }
-            else
-            {
-                erpEmployeeName.SetError(txtEmployeeName, "Please enter Employee Name");
-                txtEmployeeName.Focus();
-                txtEmployeeName.SelectAll();
-                return;
-            }
-        }
-
-
-        private void validatingDepartment(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            if(string.IsNullOrEmpty(txtDepartment.Text))
-            {
-                e.Cancel = true;
-                txtDepartment.Focus();
-                erpDepartment.SetError(txtDepartment, "Please enter Department Name");
-
-            }
-            else
-            {
-                e.Cancel=false;
-                erpDepartment.SetError(txtDepartment, null);
-
-            }
-
-        }
-
+        
         //private void validatingContactNumber(object sender, System.ComponentModel.CancelEventArgs e)
         //{
         //    //if(int.Parse.IsNullOrEmpty(txtContactNumber.Text))
@@ -192,6 +144,46 @@ namespace adoNetPractise2
             return (int)MessageBox.Show("Please enter contact Number");
                     
         }
+        #endregion
+
+        #region validation events handlers
+      
+
+        private void validatingEmployeeName(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (txtEmployeeName.Text.Length > 0)
+            {
+                erpEmployeeName.SetError(txtEmployeeName, "");
+            }
+            else
+            {
+                erpEmployeeName.SetError(txtEmployeeName, "Please enter Employee Name");
+                txtEmployeeName.Focus();
+                txtEmployeeName.SelectAll();
+                return;
+            }
+        }
+
+
+        private void validatingDepartment(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtDepartment.Text))
+            {
+                e.Cancel = true;
+                txtDepartment.Focus();
+                erpDepartment.SetError(txtDepartment, "Please enter Department Name");
+
+            }
+            else
+            {
+                e.Cancel = false;
+                erpDepartment.SetError(txtDepartment, null);
+
+            }
+
+        }
+
+        #endregion
     }
 }
 
