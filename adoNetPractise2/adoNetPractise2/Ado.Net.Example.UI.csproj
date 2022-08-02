@@ -53,6 +53,7 @@
       <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeDetails.cs" />
+    <Compile Include="EmployeeDetailsGridView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Employee.resx">
