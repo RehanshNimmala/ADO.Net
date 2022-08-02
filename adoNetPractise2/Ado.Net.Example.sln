@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "adoNetPractise2", "adoNetPractise2\adoNetPractise2.csproj", "{31460D03-DD2D-4FA6-9E8B-4D1DA6D977CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ado.Net.Example.UI", "adoNetPractise2\Ado.Net.Example.UI.csproj", "{31460D03-DD2D-4FA6-9E8B-4D1DA6D977CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ado.Net.Example.DataAccessLayer", "Ado.Net.Example.DataAccessLayer\Ado.Net.Example.DataAccessLayer.csproj", "{19A6C115-C876-479A-8F38-2C6101E51B5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{31460D03-DD2D-4FA6-9E8B-4D1DA6D977CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31460D03-DD2D-4FA6-9E8B-4D1DA6D977CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31460D03-DD2D-4FA6-9E8B-4D1DA6D977CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19A6C115-C876-479A-8F38-2C6101E51B5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19A6C115-C876-479A-8F38-2C6101E51B5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19A6C115-C876-479A-8F38-2C6101E51B5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19A6C115-C876-479A-8F38-2C6101E51B5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
