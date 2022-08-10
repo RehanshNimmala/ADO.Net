@@ -69,6 +69,16 @@ namespace InsertUpdateDeletePractise
             }
 
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtAge.Clear();
+            txtCourse.Clear();
+            txtRollNumber.Clear();
+            txtStudentName.Clear();
+            txtRollNumber.Focus();
+
+        }
     }
 }
         
