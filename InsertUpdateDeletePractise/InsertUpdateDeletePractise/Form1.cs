@@ -115,8 +115,39 @@ namespace InsertUpdateDeletePractise
         
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            connection=new SqlConnection(databaseConnection);
+            connection.Open();
+            command=new SqlCommand();
+            command.Connection = connection;
 
+            command.CommandType = CommandType.Text;
+            //command.CommandText = $@"Select * from STUDENT where Roll_Number={rollNumber}";
+            command = new SqlCommand("select* from student where Roll_Number = " + txtRollNumber.Text + " ", connection);
+            SqlDataReader dreader = command.ExecuteReader();
+            try
+            {
+                if (dreader.Read())
+                {
+                    txtStudentName.Text = dreader[1].ToString();
+                    txtAge.Text = dreader[2].ToString();
+                    txtCourse.Text = dreader[3].ToString();
+                }
+                else
+                {
+                    MessageBox.Show(" No Record");
+                }
+                dreader.Close();
+            }
+            catch (Exception Error)
+            {
 
+                MessageBox.Show(" No Record");
+
+            }
+            connection.Close();
+        }
     }
 }
         
