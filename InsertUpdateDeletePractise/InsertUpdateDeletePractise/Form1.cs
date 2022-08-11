@@ -79,6 +79,44 @@ namespace InsertUpdateDeletePractise
             txtRollNumber.Focus();
 
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                connection = new SqlConnection(databaseConnection);
+                connection.Open();
+                command = new SqlCommand();
+                command = new SqlCommand("delete from student where Roll_Number = " + txtRollNumber.Text + " ", connection);
+                command.Connection = connection;
+               command.CommandType = CommandType.Text;
+               // command.CommandText = "Delete from student where Roll_Number="({rollNumber}"
+                
+                int rowsEffected = command.ExecuteNonQuery();
+                connection.Close();
+                if (rowsEffected > 0) 
+                {
+                    MessageBox.Show("Data Deleted Successfully");
+
+                }
+                else
+                {
+                    MessageBox.Show("Problem with Data Deleting");
+                }
+            }
+
+
+            catch (Exception Error)
+            {
+                MessageBox.Show("Please contact administrator");
+            }
+        
+        }
+
+
+
     }
 }
         
