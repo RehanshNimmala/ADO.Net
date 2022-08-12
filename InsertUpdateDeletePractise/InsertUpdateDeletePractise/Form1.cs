@@ -78,6 +78,7 @@ namespace InsertUpdateDeletePractise
             txtStudentName.Clear();
             txtRollNumber.Focus();
 
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -89,10 +90,10 @@ namespace InsertUpdateDeletePractise
                 connection = new SqlConnection(databaseConnection);
                 connection.Open();
                 command = new SqlCommand();
-                command = new SqlCommand("delete from student where Roll_Number = " + txtRollNumber.Text + " ", connection);
+               // command = new SqlCommand("delete from student where Roll_Number = " + txtRollNumber.Text + " ", connection);
                 command.Connection = connection;
                command.CommandType = CommandType.Text;
-               // command.CommandText = "Delete from student where Roll_Number="({rollNumber}"
+                command.CommandText = $"Delete from student where Roll_Number={txtRollNumber.Text}";
                 
                 int rowsEffected = command.ExecuteNonQuery();
                 connection.Close();
@@ -123,8 +124,8 @@ namespace InsertUpdateDeletePractise
             command.Connection = connection;
 
             command.CommandType = CommandType.Text;
-            //command.CommandText = $@"Select * from STUDENT where Roll_Number={rollNumber}";
-            command = new SqlCommand("select* from student where Roll_Number = " + txtRollNumber.Text + " ", connection);
+            command.CommandText = $@"Select * from STUDENT where Roll_Number={txtRollNumber.Text}";
+           // command = new SqlCommand("select* from student where Roll_Number = " + txtRollNumber.Text + " ", connection);
             SqlDataReader dreader = command.ExecuteReader();
             try
             {
@@ -148,6 +149,34 @@ namespace InsertUpdateDeletePractise
             }
             connection.Close();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            connection=new SqlConnection(databaseConnection);
+            connection.Open();
+            command= new SqlCommand();
+            command.Connection=connection;  
+            command.CommandType = CommandType.Text; 
+            command.CommandText=$@"update student set
+                                    Student_Name='{txtStudentName.Text}',
+                                    Age={txtAge.Text},
+                                    Course='{txtCourse.Text}'
+                                    where
+                                    Roll_Number={txtRollNumber.Text}";
+
+          int rowsEffected=  command.ExecuteNonQuery();
+            if(rowsEffected>0)
+            {
+                MessageBox.Show("Data Updated");
+            }
+            else
+            {
+                MessageBox.Show("Data not saved, Please try again");
+            }
+            connection.Close();
+            
+
+        }
     }
 }
         
@@ -155,8 +184,4 @@ namespace InsertUpdateDeletePractise
               
 
                 
-              
-
-    //command = new SqlCommand("Insert into STUDENT values(rollNumber, 'studentName', age, 'course')",connection);
-            
-               
+           
