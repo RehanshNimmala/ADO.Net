@@ -90,14 +90,14 @@ namespace InsertUpdateDeletePractise
                 connection = new SqlConnection(databaseConnection);
                 connection.Open();
                 command = new SqlCommand();
-               // command = new SqlCommand("delete from student where Roll_Number = " + txtRollNumber.Text + " ", connection);
+                // command = new SqlCommand("delete from student where Roll_Number = " + txtRollNumber.Text + " ", connection);
                 command.Connection = connection;
-               command.CommandType = CommandType.Text;
+                command.CommandType = CommandType.Text;
                 command.CommandText = $"Delete from student where Roll_Number={txtRollNumber.Text}";
-                
+
                 int rowsEffected = command.ExecuteNonQuery();
                 connection.Close();
-                if (rowsEffected > 0) 
+                if (rowsEffected > 0)
                 {
                     MessageBox.Show("Data Deleted Successfully");
 
@@ -113,19 +113,19 @@ namespace InsertUpdateDeletePractise
             {
                 MessageBox.Show("Please contact administrator");
             }
-        
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            connection=new SqlConnection(databaseConnection);
+            connection = new SqlConnection(databaseConnection);
             connection.Open();
-            command=new SqlCommand();
+            command = new SqlCommand();
             command.Connection = connection;
 
             command.CommandType = CommandType.Text;
             command.CommandText = $@"Select * from STUDENT where Roll_Number={txtRollNumber.Text}";
-           // command = new SqlCommand("select* from student where Roll_Number = " + txtRollNumber.Text + " ", connection);
+            // command = new SqlCommand("select* from student where Roll_Number = " + txtRollNumber.Text + " ", connection);
             SqlDataReader dreader = command.ExecuteReader();
             try
             {
@@ -152,20 +152,20 @@ namespace InsertUpdateDeletePractise
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            connection=new SqlConnection(databaseConnection);
+            connection = new SqlConnection(databaseConnection);
             connection.Open();
-            command= new SqlCommand();
-            command.Connection=connection;  
-            command.CommandType = CommandType.Text; 
-            command.CommandText=$@"update student set
+            command = new SqlCommand();
+            command.Connection = connection;
+            command.CommandType = CommandType.Text;
+            command.CommandText = $@"update student set
                                     Student_Name='{txtStudentName.Text}',
                                     Age={txtAge.Text},
                                     Course='{txtCourse.Text}'
                                     where
                                     Roll_Number={txtRollNumber.Text}";
 
-          int rowsEffected=  command.ExecuteNonQuery();
-            if(rowsEffected>0)
+            int rowsEffected = command.ExecuteNonQuery();
+            if (rowsEffected > 0)
             {
                 MessageBox.Show("Data Updated");
             }
@@ -174,11 +174,46 @@ namespace InsertUpdateDeletePractise
                 MessageBox.Show("Data not saved, Please try again");
             }
             connection.Close();
-            
+
 
         }
-    }
-}
+
+        private void btnViewData_Click(object sender, EventArgs e)
+        {
+            connection = new SqlConnection(databaseConnection);
+            connection.Open();
+            command = new SqlCommand();
+            command.Connection = connection;
+
+            command.CommandType = CommandType.Text;
+            command.CommandText = @"SELECT Roll_Number,
+                                            Student_Name,
+                                            Age,
+                                            Course
+                                            FROM 
+                                            STUDENT";
+
+            var results = command.ExecuteReader();
+
+            // List<StudentMarks> studentList = new List<StudentMarks>();
+            /* while (results.Read())
+             {
+                 StudentMarks student = new StudentMarks();
+
+                 student.Id = Convert.ToInt32(results["Id"]);
+                 student.StudentName = results["StudentName"].ToString();
+                 student.Telugu = Convert.ToInt32(results["Telugu"]);
+                 student.English = Convert.ToInt32(results["English"]);
+                 student.Total = Convert.ToInt32(results["Total"]);
+
+                 studentList.Add(student);*/
+
+        }
+    } // studentGridView.DataSource = studentList;
+
+}      
+    
+
         
             
               

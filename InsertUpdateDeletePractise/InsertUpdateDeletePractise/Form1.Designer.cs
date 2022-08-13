@@ -41,6 +41,9 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.searchGridView = new System.Windows.Forms.DataGridView();
+            this.btnViewData = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.searchGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRollNumber
@@ -113,7 +116,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(28, 363);
+            this.btnSave.Location = new System.Drawing.Point(12, 363);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 8;
@@ -123,7 +126,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(174, 363);
+            this.btnUpdate.Location = new System.Drawing.Point(128, 363);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 9;
@@ -133,7 +136,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(322, 363);
+            this.btnDelete.Location = new System.Drawing.Point(239, 363);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 10;
@@ -143,7 +146,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(472, 363);
+            this.btnSearch.Location = new System.Drawing.Point(369, 363);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 11;
@@ -153,19 +156,41 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(607, 363);
+            this.btnClear.Location = new System.Drawing.Point(9, 414);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.Size = new System.Drawing.Size(435, 56);
             this.btnClear.TabIndex = 12;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // searchGridView
+            // 
+            this.searchGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.searchGridView.Location = new System.Drawing.Point(496, 39);
+            this.searchGridView.Name = "searchGridView";
+            this.searchGridView.RowHeadersWidth = 51;
+            this.searchGridView.RowTemplate.Height = 24;
+            this.searchGridView.Size = new System.Drawing.Size(716, 328);
+            this.searchGridView.TabIndex = 13;
+            // 
+            // btnViewData
+            // 
+            this.btnViewData.Location = new System.Drawing.Point(590, 414);
+            this.btnViewData.Name = "btnViewData";
+            this.btnViewData.Size = new System.Drawing.Size(197, 56);
+            this.btnViewData.TabIndex = 14;
+            this.btnViewData.Text = "View Data";
+            this.btnViewData.UseVisualStyleBackColor = true;
+            this.btnViewData.Click += new System.EventHandler(this.btnViewData_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(716, 450);
+            this.ClientSize = new System.Drawing.Size(1224, 500);
+            this.Controls.Add(this.btnViewData);
+            this.Controls.Add(this.searchGridView);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnDelete);
@@ -181,6 +206,7 @@
             this.Controls.Add(this.lblRollNumber);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.searchGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,6 +227,8 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.DataGridView searchGridView;
+        private System.Windows.Forms.Button btnViewData;
     }
 }
 
