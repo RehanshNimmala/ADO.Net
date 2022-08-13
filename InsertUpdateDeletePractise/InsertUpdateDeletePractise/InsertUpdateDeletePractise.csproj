@@ -106,6 +106,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataGridView.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

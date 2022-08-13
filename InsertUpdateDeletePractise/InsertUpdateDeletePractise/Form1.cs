@@ -195,23 +195,28 @@ namespace InsertUpdateDeletePractise
 
             var results = command.ExecuteReader();
 
-            // List<StudentMarks> studentList = new List<StudentMarks>();
-            /* while (results.Read())
-             {
-                 StudentMarks student = new StudentMarks();
+            List<DataGridView> studentList = new List<DataGridView>();
+            while (results.Read())
+            {
+                DataGridView student = new DataGridView();
 
-                 student.Id = Convert.ToInt32(results["Id"]);
-                 student.StudentName = results["StudentName"].ToString();
-                 student.Telugu = Convert.ToInt32(results["Telugu"]);
-                 student.English = Convert.ToInt32(results["English"]);
-                 student.Total = Convert.ToInt32(results["Total"]);
+                student.RollNumber = Convert.ToInt32(results["Roll_Number"]);
+                student.StudentName = results["Student_Name"].ToString();
+                student.Age = Convert.ToInt32(results["Age"]);
+                student.Course = results["Course"].ToString();
 
-                 studentList.Add(student);*/
+                studentList.Add(student);
+
+            }
+            searchGridView.DataSource = studentList;
+
 
         }
-    } // studentGridView.DataSource = studentList;
 
-}      
+    }  
+
+}
+
     
 
         
