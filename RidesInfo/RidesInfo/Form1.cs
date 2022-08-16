@@ -56,10 +56,16 @@ namespace RidesInfo
                 throw;
             }
 
-            
+        }
 
 
-
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtAmount.Clear();
+            txtDistance.Clear();
+            txtDrop.Clear();
+            txtPickUp.Clear();
+            txtDate.Clear();
 
         }
     }
