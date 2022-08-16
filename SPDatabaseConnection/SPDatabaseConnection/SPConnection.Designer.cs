@@ -40,6 +40,7 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.spGridView = new System.Windows.Forms.DataGridView();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.spGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,11 +154,22 @@
             this.spGridView.Size = new System.Drawing.Size(640, 347);
             this.spGridView.TabIndex = 11;
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(29, 449);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(349, 59);
+            this.btnReset.TabIndex = 12;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // SPConnection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1154, 474);
+            this.ClientSize = new System.Drawing.Size(1154, 573);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.spGridView);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtFirstName);
@@ -193,6 +205,7 @@
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.DataGridView spGridView;
+        private System.Windows.Forms.Button btnReset;
     }
 }
 
