@@ -77,7 +77,8 @@ namespace InsertUpdateDeletePractise
             txtRollNumber.Clear();
             txtStudentName.Clear();
             txtRollNumber.Focus();
-
+            searchGridView.DataSource = null;
+            searchGridView.Rows.Clear();
 
         }
 
