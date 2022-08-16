@@ -102,5 +102,16 @@ namespace SPDatabaseConnection
             }
             spGridView.DataSource = List;
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtContactNumber.Text = "";
+            txtCountry.Clear();
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            txtStudentId.Clear();
+            spGridView.DataSource = null;
+            spGridView.Rows.Clear();
+        }
     }
 }
