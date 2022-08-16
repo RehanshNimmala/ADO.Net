@@ -39,6 +39,7 @@
             this.txtDistance = new System.Windows.Forms.TextBox();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -136,11 +137,22 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(48, 436);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(345, 69);
+            this.btnReset.TabIndex = 11;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1177, 450);
+            this.ClientSize = new System.Drawing.Size(1177, 579);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.txtDistance);
@@ -172,6 +184,7 @@
         private System.Windows.Forms.TextBox txtDistance;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnReset;
     }
 }
 
