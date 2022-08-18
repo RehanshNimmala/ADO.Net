@@ -111,5 +111,37 @@ namespace RidesInfo
             }
 
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection(ridesConnection);
+                connection.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = connection;
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = $@"Update RIDES_LIST set
+                            Dropping='{txtDrop.Text}',
+                            Distance={txtDistance.Text},
+                            Amount={txtAmount.Text} where Pickup='{txtPickUp.Text}'";
+
+                int rowsEffected = cmd.ExecuteNonQuery();
+                if (rowsEffected > 0)
+                {
+                    MessageBox.Show("Data updated");
+                }
+                else
+                {
+                    MessageBox.Show("Data Not Updated");
+                }
+                cmd.Connection.Close();
+
+            }
+            catch (Exception EX)
+            {
+                MessageBox.Show("Please contact Administrator");
+            }
+        }
     }
 }
