@@ -10,7 +10,8 @@ namespace RidesInfo
         {
             InitializeComponent();
         }
-
+        string ridesConnection = $@"data source=Naveen;Initial catalog=ADONET;
+                                    persist security info=True;integrated security=SSPI";
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             //Declaring the variables
@@ -25,8 +26,7 @@ namespace RidesInfo
 
             try
             {
-                string ridesConnection = $@"data source=Naveen;Initial catalog=ADONET;
-                                    persist security info=True;integrated security=SSPI";
+                
 
                 //Create an object for the SQL connection class
 
@@ -66,6 +66,49 @@ namespace RidesInfo
             txtDrop.Clear();
             txtPickUp.Clear();
             txtDate.Clear();
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Declaring the variables
+                string pickUp = txtPickUp.Text;
+                //string rideDate = DateTime.Now.ToShortDateString();
+                //string drop = txtDrop.Text;
+                //int distance = int.Parse(txtDistance.Text);
+                //int amount = int.Parse(txtAmount.Text);
+
+                //Establishing the connecton string
+
+                //string ridesConnection = $@"data source=Naveen;Initial catalog=ADONET;
+                                   // Persist security info=True; integrated security=SSPI";
+
+               // string rideConnection = $@"data source=Naveen;Initial catalog=ADONET;
+               // persist security info = True; integrated security = SSPI";
+
+                SqlConnection connection = new SqlConnection(ridesConnection);
+                connection.Open();
+                SqlCommand command = new SqlCommand();
+                command.Connection = connection;
+                command.CommandType = System.Data.CommandType.Text;
+                command.CommandText = $@"Delete from RIDES_LIST where Pickup='{pickUp}'";
+                int rowsEffected = command.ExecuteNonQuery();
+                if (rowsEffected > 0)
+                {
+                    MessageBox.Show("Data deleted");
+                }
+                else
+                {
+                    MessageBox.Show("Data not deleted");
+                }
+                connection.Close();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Please contact Administrator");
+            }
 
         }
     }
