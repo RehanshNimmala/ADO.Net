@@ -14,7 +14,14 @@ namespace ConsolePractice1
 
             string nameEntered=Console.ReadLine();
 
+
+            Console.WriteLine("Please enter your Name");
+
+            string secondName=Console.ReadLine();
+
             MyClass myClass=new MyClass(nameEntered);
+            MyName myName=new MyName(secondName);
+            //Console.WriteLine();
             Console.ReadKey();
 
         }
@@ -23,6 +30,15 @@ namespace ConsolePractice1
             public MyClass(string name)
             {
                 Console.WriteLine($"Hello {name}. Your first Console application is done");
+            }
+          
+        }
+        public class MyName
+        {
+            public  MyName(string sName)
+            {
+                Console.WriteLine($"Your Second Name is {sName}");
+
             }
         }
     }
