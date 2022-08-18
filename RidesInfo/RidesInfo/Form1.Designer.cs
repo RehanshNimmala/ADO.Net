@@ -41,6 +41,7 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -158,11 +159,22 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(438, 396);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(345, 69);
+            this.btnUpdate.TabIndex = 13;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1177, 579);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSubmit);
@@ -198,6 +210,7 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
 
