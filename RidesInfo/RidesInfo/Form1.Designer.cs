@@ -40,6 +40,7 @@
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -129,7 +130,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(48, 335);
+            this.btnSubmit.Location = new System.Drawing.Point(48, 301);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(345, 69);
             this.btnSubmit.TabIndex = 10;
@@ -139,7 +140,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(48, 436);
+            this.btnReset.Location = new System.Drawing.Point(48, 498);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(345, 69);
             this.btnReset.TabIndex = 11;
@@ -147,11 +148,22 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(48, 396);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(345, 69);
+            this.btnDelete.TabIndex = 12;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1177, 579);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtAmount);
@@ -185,6 +197,7 @@
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 
