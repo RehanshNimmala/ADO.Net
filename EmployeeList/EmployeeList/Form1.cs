@@ -58,5 +58,12 @@ namespace EmployeeList
             }
             
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtDepartment.Clear();
+            txtEmployeeId.Clear();
+            txtEmployeeName.Clear();
+        }
     }
 }
