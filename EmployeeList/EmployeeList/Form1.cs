@@ -18,6 +18,8 @@ namespace EmployeeList
             InitializeComponent();
         }
 
+        string databaseConnection = $@"data source=Naveen;Initial catalog=ADONET;
+                                        persist security info=True;integrated security=SSPI";
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             //Declaring the variables
@@ -30,8 +32,7 @@ namespace EmployeeList
 
                 //Establishing the connection string
 
-                string databaseConnection = $@"data source=Naveen;Initial catalog=ADONET;
-                                        persist security info=True;integrated security=SSPI";
+                
                 SqlConnection sqlConnection = new SqlConnection(databaseConnection);
                 sqlConnection.Open();
                 SqlCommand cmd = sqlConnection.CreateCommand();
@@ -64,6 +65,38 @@ namespace EmployeeList
             txtDepartment.Clear();
             txtEmployeeId.Clear();
             txtEmployeeName.Clear();
+        }
+
+       
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection sqlConnection = new SqlConnection(databaseConnection);
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.Connection = sqlConnection;
+                sqlCommand.CommandType = System.Data.CommandType.Text;
+                sqlCommand.CommandText = $@"delete from Employee_List where Emp_ID='{txtEmployeeId.Text}'";
+                int rowsEffected = sqlCommand.ExecuteNonQuery();
+                if (rowsEffected > 0)
+                {
+                    MessageBox.Show("Data deleted");
+                }
+                else
+                {
+                    MessageBox.Show("data not deleted");
+                }
+                sqlCommand.Connection.Close();
+
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show("Please contact Admin");
+            }
+
         }
     }
 }
