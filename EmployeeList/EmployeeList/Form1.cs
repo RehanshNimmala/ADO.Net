@@ -99,6 +99,33 @@ namespace EmployeeList
 
         }
 
-        
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection sqlConnection = new SqlConnection(databaseConnection);
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.Connection = sqlConnection;
+                sqlCommand.CommandType = System.Data.CommandType.Text;
+                sqlCommand.CommandText = $@"update Employee_List set Emp_Name='{txtEmployeeName.Text}',
+                                    Department='{txtDepartment.Text}' where Emp_ID='{txtEmployeeId.Text}'";
+                int rowsEffected = sqlCommand.ExecuteNonQuery();
+                if (rowsEffected > 0)
+                {
+                    MessageBox.Show("Data updated");
+                }
+                else
+                {
+                    MessageBox.Show("Data not updated");
+                }
+                sqlConnection.Close();
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show("Please contact Admin");
+            }
+        }
     }
 }
