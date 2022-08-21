@@ -37,6 +37,8 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.employeeGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEmployeeId
@@ -112,19 +114,30 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(292, 253);
+            this.btnDelete.Location = new System.Drawing.Point(292, 356);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(211, 72);
+            this.btnDelete.Size = new System.Drawing.Size(211, 54);
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // employeeGridView
+            // 
+            this.employeeGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeeGridView.Location = new System.Drawing.Point(363, 42);
+            this.employeeGridView.Name = "employeeGridView";
+            this.employeeGridView.RowHeadersWidth = 51;
+            this.employeeGridView.RowTemplate.Height = 24;
+            this.employeeGridView.Size = new System.Drawing.Size(410, 254);
+            this.employeeGridView.TabIndex = 9;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.employeeGridView);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSubmit);
@@ -136,6 +149,7 @@
             this.Controls.Add(this.lblEmployeeId);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.employeeGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,6 +166,7 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridView employeeGridView;
     }
 }
 
