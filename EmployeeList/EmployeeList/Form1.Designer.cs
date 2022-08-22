@@ -97,7 +97,7 @@
             // 
             this.btnSubmit.Location = new System.Drawing.Point(51, 253);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(211, 72);
+            this.btnSubmit.Size = new System.Drawing.Size(211, 43);
             this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -105,9 +105,9 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(51, 356);
+            this.btnReset.Location = new System.Drawing.Point(51, 320);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(211, 54);
+            this.btnReset.Size = new System.Drawing.Size(211, 45);
             this.btnReset.TabIndex = 7;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -115,9 +115,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(292, 356);
+            this.btnDelete.Location = new System.Drawing.Point(51, 384);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(211, 54);
+            this.btnDelete.Size = new System.Drawing.Size(211, 46);
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -130,14 +130,14 @@
             this.employeeGridView.Name = "employeeGridView";
             this.employeeGridView.RowHeadersWidth = 51;
             this.employeeGridView.RowTemplate.Height = 24;
-            this.employeeGridView.Size = new System.Drawing.Size(410, 254);
+            this.employeeGridView.Size = new System.Drawing.Size(624, 254);
             this.employeeGridView.TabIndex = 9;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(544, 356);
+            this.btnUpdate.Location = new System.Drawing.Point(51, 446);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(144, 54);
+            this.btnUpdate.Size = new System.Drawing.Size(211, 49);
             this.btnUpdate.TabIndex = 10;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1028, 507);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.employeeGridView);
             this.Controls.Add(this.btnDelete);

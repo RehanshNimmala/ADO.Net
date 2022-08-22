@@ -57,6 +57,7 @@ namespace EmployeeList
 
                 MessageBox.Show("Please contact Administrator");
             }
+            BindEmployeeListView();
             
         }
 
@@ -126,6 +127,28 @@ namespace EmployeeList
 
                 MessageBox.Show("Please contact Admin");
             }
+        }
+
+        private void BindEmployeeListView()
+        {
+            SqlConnection sqlConnection=new SqlConnection(databaseConnection);
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = sqlConnection;
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = $@"select Emp_ID,Emp_Name,Department from Employee_List";
+            var results = cmd.ExecuteReader();
+
+            List<EmployeeDetails> list = new List<EmployeeDetails>();
+            while (results.Read())
+            {
+                EmployeeDetails details = new EmployeeDetails();
+                details.EmployeeID = Convert.ToInt32(results["Emp_ID"]);
+                details.EmployeeName = results["Emp_Name"].ToString();
+                details.Department = results["Department"].ToString();
+                list.Add(details);
+            }
+            employeeGridView.DataSource = list;
         }
     }
 }
