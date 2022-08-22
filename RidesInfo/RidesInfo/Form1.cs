@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace RidesInfo
 {
@@ -49,7 +50,9 @@ namespace RidesInfo
                     MessageBox.Show("Data not inserted");
                 }
                 connection.Close();
+                BindGridView();
             }
+            
             catch (Exception ex)
             {
 
@@ -143,5 +146,35 @@ namespace RidesInfo
                 MessageBox.Show("Please contact Administrator");
             }
         }
+
+        public void BindGridView()
+        {
+            SqlConnection conn = new SqlConnection(ridesConnection);
+            conn.Open();
+            SqlCommand command = new SqlCommand();  
+            command.Connection = conn;
+            command.CommandType = System.Data.CommandType.Text;
+            command.CommandText = $@"select Date,Pickup,Dropping, Distance, Amount from RIDES_LIST";
+           var results= command.ExecuteReader();
+
+            List<BindGridView> list = new List<BindGridView>();
+            while (results.Read())
+            {
+
+                BindGridView rideGridView = new BindGridView();
+               
+                rideGridView.RideDate = results["Date"].ToString();
+                rideGridView.Pickup = results["Pickup"].ToString();
+                rideGridView.Drop = results["Dropping"].ToString();
+                rideGridView.Distance = Convert.ToInt16(results["Distance"]);
+                rideGridView.Amount = Convert.ToInt32(results["Amount"]);
+
+
+                list.Add(rideGridView);
+            }
+            ridesGridView.DataSource = list;
+ 
+        }
+        
     }
 }

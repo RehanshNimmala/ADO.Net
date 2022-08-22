@@ -42,6 +42,8 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.ridesGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.ridesGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -169,11 +171,22 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // ridesGridView
+            // 
+            this.ridesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ridesGridView.Location = new System.Drawing.Point(438, 36);
+            this.ridesGridView.Name = "ridesGridView";
+            this.ridesGridView.RowHeadersWidth = 51;
+            this.ridesGridView.RowTemplate.Height = 24;
+            this.ridesGridView.Size = new System.Drawing.Size(710, 297);
+            this.ridesGridView.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1177, 579);
+            this.Controls.Add(this.ridesGridView);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnReset);
@@ -190,6 +203,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Rides Details";
+            ((System.ComponentModel.ISupportInitialize)(this.ridesGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,6 +225,7 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.DataGridView ridesGridView;
     }
 }
 
