@@ -35,6 +35,7 @@
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -98,11 +99,22 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(72, 326);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(270, 50);
+            this.btnReset.TabIndex = 7;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.txtCustomerName);
@@ -126,6 +138,7 @@
         private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnReset;
     }
 }
 
