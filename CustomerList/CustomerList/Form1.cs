@@ -59,5 +59,12 @@ namespace CustomerList
 
 
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtCustomerId.Clear();
+            txtCustomerName.Clear();
+            txtPhoneNumber.Clear();
+        }
     }
 }
