@@ -69,6 +69,10 @@ namespace RidesInfo
             txtDrop.Clear();
             txtPickUp.Clear();
             txtDate.Clear();
+            ridesGridView.DataSource = null;
+            ridesGridView.Rows.Clear();
+
+
 
         }
 
