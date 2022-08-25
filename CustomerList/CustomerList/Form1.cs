@@ -50,6 +50,7 @@ namespace CustomerList
                     MessageBox.Show("Data not Inserted");
                 }
                 sqlConnection.Close();
+                ViewCustomerList();
             }
             catch (Exception EX)
             {
@@ -128,5 +129,29 @@ namespace CustomerList
                 MessageBox.Show("Please contact Admin");
             }
         }
+        public  void ViewCustomerList()
+        {
+            SqlConnection sqlConnection=new SqlConnection(customerConnection);
+            sqlConnection.Open();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnection;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = $@"Select Customer_ID, Customer_Name,Phone_Number from Customer_List";
+            var results = sqlCommand.ExecuteReader();
+            List<CustomerList> list = new List<CustomerList>();
+            while(results.Read())
+            {
+                CustomerList customerList = new CustomerList();
+                customerList.CustomerId = Convert.ToInt16(results["Customer_ID"]);
+                customerList.CustomerName = results["Customer_Name"].ToString();
+                customerList.PhoneNumber = Convert.ToInt16(results["Phone_Number"]);
+                list.Add(customerList);
+
+            }
+
+            customerGridView.DataSource = list;
+     
+        }
+        
     }
 }

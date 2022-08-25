@@ -38,6 +38,8 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
+            this.customerGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.customerGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -93,9 +95,9 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(72, 223);
+            this.btnSubmit.Location = new System.Drawing.Point(72, 260);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(270, 73);
+            this.btnSubmit.Size = new System.Drawing.Size(270, 46);
             this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -113,7 +115,7 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(72, 417);
+            this.deleteButton.Location = new System.Drawing.Point(72, 405);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(270, 50);
             this.deleteButton.TabIndex = 8;
@@ -123,19 +125,30 @@
             // 
             // updateButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(433, 223);
+            this.updateButton.Location = new System.Drawing.Point(72, 481);
             this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(170, 73);
+            this.updateButton.Size = new System.Drawing.Size(270, 40);
             this.updateButton.TabIndex = 9;
             this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = true;
             this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
+            // customerGridView
+            // 
+            this.customerGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customerGridView.Location = new System.Drawing.Point(526, 56);
+            this.customerGridView.Name = "customerGridView";
+            this.customerGridView.RowHeadersWidth = 51;
+            this.customerGridView.RowTemplate.Height = 24;
+            this.customerGridView.Size = new System.Drawing.Size(582, 264);
+            this.customerGridView.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 545);
+            this.ClientSize = new System.Drawing.Size(1176, 545);
+            this.Controls.Add(this.customerGridView);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.btnReset);
@@ -148,6 +161,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.customerGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,6 +179,7 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.DataGridView customerGridView;
     }
 }
 
