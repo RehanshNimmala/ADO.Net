@@ -36,6 +36,7 @@
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -109,11 +110,22 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(72, 417);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(270, 50);
+            this.deleteButton.TabIndex = 8;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 545);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtPhoneNumber);
@@ -139,6 +151,7 @@
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button deleteButton;
     }
 }
 
