@@ -162,7 +162,7 @@ namespace RidesInfo
            var results= command.ExecuteReader();
 
             List<BindGridView> list = new List<BindGridView>();
-            while (results.Read())
+            while (results.Read()) 
             {
 
                 BindGridView rideGridView = new BindGridView();
