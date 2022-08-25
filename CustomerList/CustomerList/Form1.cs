@@ -18,6 +18,8 @@ namespace CustomerList
             InitializeComponent();
         }
 
+        string customerConnection = $@"data source=Naveen;
+                            initial catalog=ADONET;persist security info=True;integrated security=SSPI";
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             try
@@ -29,8 +31,7 @@ namespace CustomerList
 
                 //Establishing the connection string
 
-                string customerConnection = $@"data source=Naveen;
-                            initial catalog=ADONET;persist security info=True;integrated security=SSPI";
+              
 
                 SqlConnection sqlConnection = new SqlConnection(customerConnection);
                 sqlConnection.Open();
@@ -65,6 +66,38 @@ namespace CustomerList
             txtCustomerId.Clear();
             txtCustomerName.Clear();
             txtPhoneNumber.Clear();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection SqlConnection = new SqlConnection(customerConnection);
+                SqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.Connection = SqlConnection;
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.CommandText = $@"Delete from Customer_List where Customer_Name='{txtCustomerName.Text}'";
+
+                int rowsEfffected = sqlCommand.ExecuteNonQuery();
+                if (rowsEfffected > 0)
+                {
+                    MessageBox.Show("Data Deleted");
+                }
+                else
+                {
+                    MessageBox.Show("Data not Deleted");
+                }
+                SqlConnection.Close();
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show("Please contact Admin");
+            }
+
+
+
         }
     }
 }
