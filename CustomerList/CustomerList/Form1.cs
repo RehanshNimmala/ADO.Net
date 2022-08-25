@@ -99,5 +99,34 @@ namespace CustomerList
 
 
         }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection sqlConnection = new SqlConnection(customerConnection);
+                sqlConnection.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = sqlConnection;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = $@"update Customer_List set Customer_Name='{txtCustomerName.Text}',Phone_Number={txtPhoneNumber.Text}
+                                    where (Customer_ID={txtCustomerId.Text})";
+                int rowsChanged = cmd.ExecuteNonQuery();
+                if (rowsChanged > 0)
+                {
+                    MessageBox.Show("Data Updated");
+                }
+                else
+                {
+                    MessageBox.Show("Data Not Updated");
+                }
+                sqlConnection.Close();
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show("Please contact Admin");
+            }
+        }
     }
 }
