@@ -25,32 +25,38 @@ namespace CustomerList
             try
             {
                 //Declaring the variables
-                int customerId = int.Parse(txtCustomerId.Text);
+                int customerId;// = int.Parse(txtCustomerId.Text);
                 int phoneNumber = int.Parse(txtPhoneNumber.Text);
                 string customerName = txtCustomerName.Text;
 
                 //Establishing the connection string
 
-              
-
-                SqlConnection sqlConnection = new SqlConnection(customerConnection);
-                sqlConnection.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = sqlConnection;
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $@"Insert into Customer_List(Customer_ID,Customer_Name,Phone_Number)
-                                                            Values({customerId},'{customerName}',{phoneNumber})";
-                int rowsEfffected = cmd.ExecuteNonQuery();
-                if (rowsEfffected > 0)
+                if (int.TryParse(txtCustomerId.Text, out customerId))
                 {
-                    MessageBox.Show("Data Inserted");
+
+                    SqlConnection sqlConnection = new SqlConnection(customerConnection);
+                    sqlConnection.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = sqlConnection;
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = $@"Insert into Customer_List(Customer_ID,Customer_Name,Phone_Number)
+                                                            Values({customerId},'{customerName}',{phoneNumber})";
+                    int rowsEfffected = cmd.ExecuteNonQuery();
+                    if (rowsEfffected > 0)
+                    {
+                        MessageBox.Show("Data Inserted");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data not Inserted");
+                    }
+                    sqlConnection.Close();
+                    ViewCustomerList();
                 }
                 else
                 {
-                    MessageBox.Show("Data not Inserted");
+                    MessageBox.Show("Please enter Valid Customer ID");
                 }
-                sqlConnection.Close();
-                ViewCustomerList();
             }
             catch (Exception EX)
             {
