@@ -17,7 +17,9 @@ namespace PatientInfo
         {
             InitializeComponent();
         }
-
+        string sqlConnection = $@"Data source=Naveen;initial Catalog=ADONET;
+                                        persist security info=true;integrated security=SSPI";
+       
         private void submitButton_Click(object sender, EventArgs e)
         {
             try
@@ -30,10 +32,9 @@ namespace PatientInfo
 
                 // creating Connection to the data base
 
-                string sqlConnection = $@"Data source=Naveen;initial Catalog=ADONET;
-                                        persist security info=true;integrated security=SSPI";
                 SqlConnection sql = new SqlConnection(sqlConnection);
                 sql.Open();
+
                 SqlCommand cmd = new SqlCommand(sqlConnection);
                 cmd.Connection = sql;
                 cmd.CommandType = CommandType.Text;
@@ -59,5 +60,41 @@ namespace PatientInfo
 
 
         }// End of submit button
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                SqlConnection sql = new SqlConnection(sqlConnection);
+                sql.Open();
+
+                SqlCommand cmd = new SqlCommand(sqlConnection);
+                cmd.Connection = sql;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = $@"Delete from Patient_Information where Patient_Name='{nameTextBox.Text}'";
+                int rowsEffected = cmd.ExecuteNonQuery();
+                if (rowsEffected > 0)
+                {
+                    MessageBox.Show("Data is Deleted");
+                }
+                else
+                {
+                    MessageBox.Show("Data not Deleted");
+                }
+                sql.Close();
+            }
+            catch (Exception )
+            {
+
+                MessageBox.Show("Please contact the admin");
+            }
+
+        }
     }// End of class
 }//End of Namespace
