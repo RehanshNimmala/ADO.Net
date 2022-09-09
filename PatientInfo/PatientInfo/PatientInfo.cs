@@ -96,5 +96,40 @@ namespace PatientInfo
             }
 
         }
+
+      
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection sql = new SqlConnection(sqlConnection);
+                sql.Open();
+
+                SqlCommand cmd = new SqlCommand(sqlConnection);
+                cmd.Connection = sql;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = $@"Update Patient_Information set 
+                                Age={ageTextBox.Text},
+                                Phone_Number={phoneNumberTextBox.Text},
+                                Bill_Amount={billAmountTextBox.Text} Where Patient_Name='{nameTextBox.Text}'";
+                int rowsChanged = cmd.ExecuteNonQuery();
+                if (rowsChanged > 0)
+                {
+                    MessageBox.Show("Data is Updated");
+                }
+                else
+                {
+                    MessageBox.Show("Data not Updated");
+                }
+                sql.Close();
+            }
+            catch (Exception)
+            {
+
+
+                MessageBox.Show("Please contact the admin");
+            }
+
+        }
     }// End of class
 }//End of Namespace
