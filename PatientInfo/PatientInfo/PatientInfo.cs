@@ -50,6 +50,7 @@ namespace PatientInfo
                     MessageBox.Show("Data not Inserted");
                 }
                 sql.Close();
+                BindGridView();
 
             }
             catch (Exception )
@@ -131,5 +132,32 @@ namespace PatientInfo
             }
 
         }
+
+        public void BindGridView()
+        {
+            SqlConnection sql = new SqlConnection(sqlConnection);
+            sql.Open();
+
+            SqlCommand cmd = new SqlCommand(sqlConnection);
+            cmd.Connection = sql;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $@"Select Patient_Name,Age,Phone_Number,Bill_Amount from Patient_Information";
+            var results=cmd.ExecuteReader();
+            List<DataView> list = new List<DataView>();
+            while(results.Read())
+            {
+                DataView dv = new DataView();
+                dv.Name = results["Patient_Name"].ToString();
+                dv.Age = Convert.ToInt16(results["Age"]);
+                dv.PhoneNumber = Convert.ToInt16(results["Phone_Number"]);
+                dv.BillAmount = Convert.ToInt16(results["Bill_Amount"]);
+                list.Add(dv);
+
+
+            }
+            dataGridView.DataSource=list;
+        }
+
+       
     }// End of class
 }//End of Namespace
