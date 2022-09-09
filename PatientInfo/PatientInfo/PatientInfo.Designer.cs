@@ -40,6 +40,8 @@
             this.exitButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -150,11 +152,23 @@
             this.updateButton.UseVisualStyleBackColor = true;
             this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
+            // dataGridView
+            // 
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(422, 57);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.RowTemplate.Height = 24;
+            this.dataGridView.Size = new System.Drawing.Size(497, 254);
+            this.dataGridView.TabIndex = 12;
+            
+            // 
             // PatientInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1048, 450);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.exitButton);
@@ -169,6 +183,7 @@
             this.Controls.Add(this.label1);
             this.Name = "PatientInfo";
             this.Text = "Patient Information";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,6 +203,7 @@
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.DataGridView dataGridView;
     }
 }
 
