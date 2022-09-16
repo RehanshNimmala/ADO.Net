@@ -38,6 +38,7 @@
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.submitButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
+            this.updateButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -127,11 +128,22 @@
             this.exitButton.Text = "E&xit";
             this.exitButton.UseVisualStyleBackColor = true;
             // 
+            // updateButton
+            // 
+            this.updateButton.Location = new System.Drawing.Point(397, 297);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(280, 70);
+            this.updateButton.TabIndex = 10;
+            this.updateButton.Text = "Update";
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 518);
+            this.Controls.Add(this.updateButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.phoneNumberTextBox);
@@ -161,6 +173,7 @@
         private System.Windows.Forms.TextBox phoneNumberTextBox;
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Button updateButton;
     }
 }
 
