@@ -96,5 +96,38 @@ namespace StudentInformation
                 MessageBox.Show("Please contact the admin");
             }
         }
+
+       
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection sql = new SqlConnection(sqlConnection);
+                sql.Open();
+
+                SqlCommand cmd = new SqlCommand(sqlConnection);
+                cmd.Connection = sql;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = $@"delete Student_Information 
+                                 Where Roll_Number={rollNumberTextBox.Text}";
+                int rowsChanged = cmd.ExecuteNonQuery();
+                if (rowsChanged > 0)
+                {
+                    MessageBox.Show("Data is Deleted");
+                }
+                else
+                {
+                    MessageBox.Show("Data not Deleted");
+                }
+                sql.Close();
+            }
+            catch (Exception)
+            {
+
+
+                MessageBox.Show("Please contact the admin");
+            }
+
+        }
     }
 }
