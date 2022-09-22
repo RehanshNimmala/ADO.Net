@@ -51,9 +51,9 @@ namespace StudentInformation
                     MessageBox.Show("Data not Inserted");
                 }
                 sql.Close();
-                
-
+                BindGridView();
             }
+             
             catch (Exception)
             {
 
@@ -128,6 +128,30 @@ namespace StudentInformation
                 MessageBox.Show("Please contact the admin");
             }
 
+        }
+        public void BindGridView()
+        {
+            SqlConnection sql = new SqlConnection(sqlConnection);
+            sql.Open();
+
+            SqlCommand cmd = new SqlCommand(sqlConnection);
+            cmd.Connection = sql;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $@"Select Roll_Number,First_Name,Last_Name,Phone_Number from Student_Information";
+            var results = cmd.ExecuteReader();
+            List<StudentDataView> list = new List<StudentDataView>();
+            while (results.Read())
+            {
+                StudentDataView dv = new StudentDataView();
+                dv.Roll_Number = Convert.ToInt16(results["Roll_Number"]);
+                dv.First_Name = results["First_Name"].ToString();
+                dv.Last_Name = results["Last_name"].ToString();
+                dv.Phone_Number = Convert.ToInt16(results["Phone_Number"]);
+                list.Add(dv);
+
+
+            }
+            studentGridView.DataSource = list;
         }
     }
 }
