@@ -40,6 +40,8 @@
             this.exitButton = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.studentGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.studentGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -114,7 +116,7 @@
             // 
             this.submitButton.Location = new System.Drawing.Point(59, 297);
             this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(280, 70);
+            this.submitButton.Size = new System.Drawing.Size(126, 70);
             this.submitButton.TabIndex = 8;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
@@ -124,16 +126,16 @@
             // 
             this.exitButton.Location = new System.Drawing.Point(59, 408);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(280, 66);
+            this.exitButton.Size = new System.Drawing.Size(126, 66);
             this.exitButton.TabIndex = 9;
             this.exitButton.Text = "E&xit";
             this.exitButton.UseVisualStyleBackColor = true;
             // 
             // updateButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(397, 297);
+            this.updateButton.Location = new System.Drawing.Point(241, 297);
             this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(280, 70);
+            this.updateButton.Size = new System.Drawing.Size(117, 70);
             this.updateButton.TabIndex = 10;
             this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = true;
@@ -141,19 +143,30 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(382, 406);
+            this.deleteButton.Location = new System.Drawing.Point(241, 404);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(280, 70);
+            this.deleteButton.Size = new System.Drawing.Size(117, 70);
             this.deleteButton.TabIndex = 11;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
+            // studentGridView
+            // 
+            this.studentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.studentGridView.Location = new System.Drawing.Point(490, 48);
+            this.studentGridView.Name = "studentGridView";
+            this.studentGridView.RowHeadersWidth = 51;
+            this.studentGridView.RowTemplate.Height = 24;
+            this.studentGridView.Size = new System.Drawing.Size(638, 426);
+            this.studentGridView.TabIndex = 12;
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 518);
+            this.ClientSize = new System.Drawing.Size(1184, 518);
+            this.Controls.Add(this.studentGridView);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.exitButton);
@@ -168,6 +181,7 @@
             this.Controls.Add(this.label1);
             this.Name = "StudentForm";
             this.Text = "Student Information";
+            ((System.ComponentModel.ISupportInitialize)(this.studentGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,6 +201,7 @@
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.DataGridView studentGridView;
     }
 }
 
