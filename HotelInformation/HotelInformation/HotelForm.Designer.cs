@@ -35,9 +35,9 @@
             this.customerNameTextBox = new System.Windows.Forms.TextBox();
             this.fromTextBox = new System.Windows.Forms.TextBox();
             this.durationTextBox = new System.Windows.Forms.TextBox();
-            this.billTextBox = new System.Windows.Forms.TextBox();
             this.insertButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
+            this.amountLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -100,14 +100,6 @@
             this.durationTextBox.Size = new System.Drawing.Size(100, 22);
             this.durationTextBox.TabIndex = 6;
             // 
-            // billTextBox
-            // 
-            this.billTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.billTextBox.Location = new System.Drawing.Point(265, 274);
-            this.billTextBox.Name = "billTextBox";
-            this.billTextBox.Size = new System.Drawing.Size(100, 22);
-            this.billTextBox.TabIndex = 7;
-            // 
             // insertButton
             // 
             this.insertButton.Location = new System.Drawing.Point(69, 327);
@@ -116,6 +108,7 @@
             this.insertButton.TabIndex = 8;
             this.insertButton.Text = "&Insert";
             this.insertButton.UseVisualStyleBackColor = true;
+            this.insertButton.Click += new System.EventHandler(this.insertButton_Click);
             // 
             // exitButton
             // 
@@ -126,14 +119,22 @@
             this.exitButton.Text = "E&xit";
             this.exitButton.UseVisualStyleBackColor = true;
             // 
+            // amountLabel
+            // 
+            this.amountLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.amountLabel.Location = new System.Drawing.Point(265, 273);
+            this.amountLabel.Name = "amountLabel";
+            this.amountLabel.Size = new System.Drawing.Size(100, 23);
+            this.amountLabel.TabIndex = 10;
+            // 
             // HotelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.amountLabel);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.insertButton);
-            this.Controls.Add(this.billTextBox);
             this.Controls.Add(this.durationTextBox);
             this.Controls.Add(this.fromTextBox);
             this.Controls.Add(this.customerNameTextBox);
@@ -157,9 +158,9 @@
         private System.Windows.Forms.TextBox customerNameTextBox;
         private System.Windows.Forms.TextBox fromTextBox;
         private System.Windows.Forms.TextBox durationTextBox;
-        private System.Windows.Forms.TextBox billTextBox;
         private System.Windows.Forms.Button insertButton;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Label amountLabel;
     }
 }
 
