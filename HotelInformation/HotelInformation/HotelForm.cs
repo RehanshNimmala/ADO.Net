@@ -69,6 +69,10 @@ namespace HotelInformation
 
         }
 
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }//Exit button
     }
     
 }
