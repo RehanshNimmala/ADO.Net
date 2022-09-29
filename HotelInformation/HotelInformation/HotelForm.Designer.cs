@@ -38,6 +38,7 @@
             this.insertButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.amountLabel = new System.Windows.Forms.Label();
+            this.updateButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -128,11 +129,22 @@
             this.amountLabel.Size = new System.Drawing.Size(100, 23);
             this.amountLabel.TabIndex = 10;
             // 
+            // updateButton
+            // 
+            this.updateButton.Location = new System.Drawing.Point(69, 401);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(75, 37);
+            this.updateButton.TabIndex = 11;
+            this.updateButton.Text = "Update";
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            // 
             // HotelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.updateButton);
             this.Controls.Add(this.amountLabel);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.insertButton);
@@ -162,6 +174,7 @@
         private System.Windows.Forms.Button insertButton;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label amountLabel;
+        private System.Windows.Forms.Button updateButton;
     }
 }
 

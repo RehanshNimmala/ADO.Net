@@ -73,6 +73,48 @@ namespace HotelInformation
         {
             this.Close();
         }//Exit button
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                //Create an object for the SQL connection class
+
+                SqlConnection connection = new SqlConnection(hotelConnection);
+                connection.Open();
+                //Create an object for the command(New Query as in sql)
+
+                SqlCommand command = new SqlCommand();
+                command.Connection = connection;
+                command.CommandType = System.Data.CommandType.Text;
+                command.CommandText = $@"update Hotel_Information
+                                        set Customer_Name='{customerNameTextBox.Text}',
+From_Address='{fromTextBox.Text}' where
+Duration={durationTextBox.Text}";
+//Bill_Amount={amountLabel.Text})";
+                int rowsEffected = command.ExecuteNonQuery();
+                if (rowsEffected > 0)
+                {
+                    MessageBox.Show("Data Updated");
+                }
+                else
+                {
+                    MessageBox.Show("Data not Updated");
+                }
+                connection.Close();
+            }
+
+            catch (Exception)
+            {
+
+                MessageBox.Show("Please contact Admin");
+            }
+
+        }
+
     }
+    
     
 }
