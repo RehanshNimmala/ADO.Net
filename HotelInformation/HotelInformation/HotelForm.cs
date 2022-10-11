@@ -114,6 +114,35 @@ Duration={durationTextBox.Text}";
 
         }
 
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                SqlConnection conn = new SqlConnection(hotelConnection);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = $"Delete from Hotel_Information where Customer_Name='{customerNameTextBox.Text}'";
+                int rowsChanged = cmd.ExecuteNonQuery();
+                if (rowsChanged > 0)
+                {
+                    MessageBox.Show("Data deleted");
+                }
+                else
+                {
+                    MessageBox.Show("Data not deleted");
+                }
+                cmd.Connection.Close();
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("please contact Admin");
+            }
+        }
     }
     
     
