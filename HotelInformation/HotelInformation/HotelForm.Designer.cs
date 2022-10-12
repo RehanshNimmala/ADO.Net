@@ -40,6 +40,8 @@
             this.amountLabel = new System.Windows.Forms.Label();
             this.updateButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.hotelGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -150,11 +152,22 @@
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
+            // hotelGridView
+            // 
+            this.hotelGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.hotelGridView.Location = new System.Drawing.Point(457, 86);
+            this.hotelGridView.Name = "hotelGridView";
+            this.hotelGridView.RowHeadersWidth = 51;
+            this.hotelGridView.RowTemplate.Height = 24;
+            this.hotelGridView.Size = new System.Drawing.Size(572, 301);
+            this.hotelGridView.TabIndex = 13;
+            // 
             // HotelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1129, 450);
+            this.Controls.Add(this.hotelGridView);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.amountLabel);
@@ -169,6 +182,7 @@
             this.Controls.Add(this.label1);
             this.Name = "HotelForm";
             this.Text = "Hotel Lucky";
+            ((System.ComponentModel.ISupportInitialize)(this.hotelGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,6 +202,7 @@
         private System.Windows.Forms.Label amountLabel;
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.DataGridView hotelGridView;
     }
 }
 
