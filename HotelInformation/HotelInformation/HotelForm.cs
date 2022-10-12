@@ -17,8 +17,8 @@ namespace HotelInformation
         {
             InitializeComponent();
         }
-
         string hotelConnection = $"data source=Naveen;Initial catalog=ADONET;Persist security info=True;integrated security=SSPI";
+
         private void insertButton_Click(object sender, EventArgs e)
         {
             //Declaring the variables
@@ -66,6 +66,7 @@ namespace HotelInformation
 
                 MessageBox.Show("Please contact Admin");
             }
+            GettingDataFromDB();
 
         }
 
@@ -142,8 +143,41 @@ Duration={durationTextBox.Text}";
 
                 MessageBox.Show("please contact Admin");
             }
+
+        }
+        public void GettingDataFromDB()
+        {
+            SqlConnection sqlConnection = new SqlConnection(hotelConnection);
+            sqlConnection.Open();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnection;
+            sqlCommand.CommandType = System.Data.CommandType.Text;
+            sqlCommand.CommandText = $@"Select Customer_Name,From_Address,Duration, Bill_Amount from Hotel_Information";
+            var results = sqlCommand.ExecuteReader();
+
+            List<GridView> list = new List<GridView>();
+            while (results.Read())
+            {
+                GridView gridView = new GridView();
+                gridView.CustomerName = results["Customer_Name"].ToString();
+                gridView.FromCity = results["From_Address"].ToString();
+                gridView.Duration = Convert.ToInt16(results["Duration"]);
+                gridView.AmountDue = Convert.ToInt16(results["Bill_Amount"]);
+                list.Add(gridView);
+            }
+            hotelGridView.DataSource = list;
         }
     }
+
+    internal class GridView
+    {
+        public string CustomerName { get; set; }
+        public string FromCity { get; set; }
+        public int Duration { get; set; }
+        public int AmountDue { get; set; }
+    }
+
+   
     
     
 }
