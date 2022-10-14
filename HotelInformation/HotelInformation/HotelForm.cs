@@ -23,48 +23,58 @@ namespace HotelInformation
         {
             //Declaring the variables
 
-            string customerName = customerNameTextBox.Text;
-            string from = fromTextBox.Text;
-            int duration = int.Parse(durationTextBox.Text);
-            //int billAmount = int.Parse(billTextBox.Text);
-
-            //calculating the bill
-            double amount = duration * 1000;
-            amountLabel.Text = amount.ToString();
-
-            //Establishing the connection string
-
-            try
+            string customerName;
+            if (customerNameTextBox.TextLength > 0)
             {
+                customerName = customerNameTextBox.Text;
+
+                string from = fromTextBox.Text;
+                int duration = int.Parse(durationTextBox.Text);
+                //int billAmount = int.Parse(billTextBox.Text);
 
 
-                //Create an object for the SQL connection class
+                //calculating the bill
+                double amount = duration * 1000;
+                amountLabel.Text = amount.ToString();
 
-                SqlConnection connection = new SqlConnection(hotelConnection);
-                connection.Open();
-                //Create an object for the command(New Query as in sql)
+                //Establishing the connection string
 
-                SqlCommand command = new SqlCommand();
-                command.Connection = connection;
-                command.CommandType = System.Data.CommandType.Text;
-                command.CommandText = $@"Insert into Hotel_Information
+                try
+                {
+
+
+                    //Create an object for the SQL connection class
+
+                    SqlConnection connection = new SqlConnection(hotelConnection);
+                    connection.Open();
+                    //Create an object for the command(New Query as in sql)
+
+                    SqlCommand command = new SqlCommand();
+                    command.Connection = connection;
+                    command.CommandType = System.Data.CommandType.Text;
+                    command.CommandText = $@"Insert into Hotel_Information
                                         Values('{customerNameTextBox.Text}','{fromTextBox.Text}',{durationTextBox.Text},{amount})";
-                int rowsEffected = command.ExecuteNonQuery();
-                if (rowsEffected > 0)
-                {
-                    MessageBox.Show("Data inserted");
+                    int rowsEffected = command.ExecuteNonQuery();
+                    if (rowsEffected > 0)
+                    {
+                        MessageBox.Show("Data inserted");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data not inserted");
+                    }
+                    connection.Close();
                 }
-                else
+
+                catch (Exception)
                 {
-                    MessageBox.Show("Data not inserted");
+
+                    MessageBox.Show("Please contact Admin");
                 }
-                connection.Close();
             }
-
-            catch (Exception )
+            else
             {
-
-                MessageBox.Show("Please contact Admin");
+                MessageBox.Show("Please enter a valid Name");
             }
             GettingDataFromDB();
 
