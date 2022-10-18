@@ -38,6 +38,7 @@
             this.rideLabel = new System.Windows.Forms.Label();
             this.rideComboBox = new System.Windows.Forms.ComboBox();
             this.nameErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.deleteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nameErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,11 +123,21 @@
             // 
             this.nameErrorProvider.ContainerControl = this;
             // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(211, 351);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.TabIndex = 8;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.rideComboBox);
             this.Controls.Add(this.rideLabel);
             this.Controls.Add(this.ageTextBox);
@@ -154,6 +165,7 @@
         private System.Windows.Forms.Label rideLabel;
         private System.Windows.Forms.ComboBox rideComboBox;
         private System.Windows.Forms.ErrorProvider nameErrorProvider;
+        private System.Windows.Forms.Button deleteButton;
     }
 }
 
