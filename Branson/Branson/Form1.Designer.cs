@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.exitButton = new System.Windows.Forms.Button();
             this.insertButton = new System.Windows.Forms.Button();
             this.nameTextBox = new System.Windows.Forms.TextBox();
@@ -36,6 +37,8 @@
             this.ageTextBox = new System.Windows.Forms.TextBox();
             this.rideLabel = new System.Windows.Forms.Label();
             this.rideComboBox = new System.Windows.Forms.ComboBox();
+            this.nameErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.nameErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // exitButton
@@ -56,6 +59,7 @@
             this.insertButton.TabIndex = 1;
             this.insertButton.Text = "Insert";
             this.insertButton.UseVisualStyleBackColor = true;
+            this.insertButton.Click += new System.EventHandler(this.insertButton_Click);
             // 
             // nameTextBox
             // 
@@ -114,6 +118,10 @@
             this.rideComboBox.Size = new System.Drawing.Size(196, 24);
             this.rideComboBox.TabIndex = 7;
             // 
+            // nameErrorProvider
+            // 
+            this.nameErrorProvider.ContainerControl = this;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -129,6 +137,7 @@
             this.Controls.Add(this.exitButton);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.nameErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,6 +153,7 @@
         private System.Windows.Forms.TextBox ageTextBox;
         private System.Windows.Forms.Label rideLabel;
         private System.Windows.Forms.ComboBox rideComboBox;
+        private System.Windows.Forms.ErrorProvider nameErrorProvider;
     }
 }
 

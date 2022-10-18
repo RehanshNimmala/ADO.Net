@@ -22,6 +22,16 @@ namespace Branson
             this.Close();
         }
 
-       
+        private void insertButton_Click(object sender, EventArgs e)
+        {
+            if(nameTextBox.Text=="")
+            {
+                nameErrorProvider.SetError(nameTextBox, "Please enter the Name");
+            }
+            else
+            {
+                nameErrorProvider.SetError(nameTextBox, "");
+            }
+        }
     }
 }
