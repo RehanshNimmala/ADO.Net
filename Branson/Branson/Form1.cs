@@ -48,6 +48,7 @@ namespace Branson
                 //create an oblect for the command
 
                 SqlCommand command = new SqlCommand();
+                command.Connection = sqlConnection;
                 command.CommandType = CommandType.Text;
                 command.CommandText = $@"Insert into Branson(Name, Age, Ride)
                 Values('{nameTextBox.Text}', {ageTextBox.Text},' {rideComboBox.SelectedItem}')";
@@ -68,8 +69,39 @@ namespace Branson
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Please contact Admin");
             }
+
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string connection = $@"Data source=Naveen;Initial catalog=ADONET; persist security info=True;Integrated security=SSPI";
+                SqlConnection sqlConnection = new SqlConnection(connection);
+                sqlConnection.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = sqlConnection;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = $@"Delete from Branson where Name='{nameTextBox.Text}'";
+                int rowsAffected = cmd.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Data deleted");
+                }
+                else
+                {
+                    MessageBox.Show("Data not deleted, Please cotact Admin");
+                }
+                sqlConnection.Close();
+            }
+            catch (Exception )
+            {
+
+                MessageBox.Show("Please contact Admin");
+            }
+
 
         }
     }

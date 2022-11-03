@@ -109,7 +109,7 @@
             this.rideComboBox.FormattingEnabled = true;
             this.rideComboBox.Items.AddRange(new object[] {
             "Wild Fire-Roller caster",
-            "Time Traveller-Roller Caster",
+            "Time Traveller RollerCaster",
             "Gaint Swing",
             "Train",
             "Puppy jump",
@@ -131,6 +131,7 @@
             this.deleteButton.TabIndex = 8;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // Form1
             // 
