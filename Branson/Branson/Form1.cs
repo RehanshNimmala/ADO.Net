@@ -104,5 +104,37 @@ namespace Branson
 
 
         }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                //Establish the connection string
+            string sqlConnection = $@"Data source=Naveen;initial catalog=ADONET;persist security info=true;integrated security=SSPI";
+                SqlConnection updateConnection = new SqlConnection(sqlConnection);
+                updateConnection.Open();
+                SqlCommand updateCommand = new SqlCommand();
+                updateCommand.Connection = updateConnection;
+                updateCommand.CommandType = CommandType.Text;
+                updateCommand.CommandText = $@"update Branson set Age={ageTextBox.Text}, Ride='{rideComboBox.SelectedItem}' where Name='{nameTextBox.Text}'";
+                int dataChanged = updateCommand.ExecuteNonQuery();
+                if (dataChanged > 0)
+                {
+                    MessageBox.Show("Data is updated");
+                }
+                else
+                {
+                    MessageBox.Show("Data not Updated.PLease check with Admin");
+                }
+                updateConnection.Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }
