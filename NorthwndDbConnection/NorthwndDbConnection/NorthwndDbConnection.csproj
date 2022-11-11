@@ -87,6 +87,7 @@
     <Compile Include="Individual Customers.Designer.cs">
       <DependentUpon>Individual Customers.cs</DependentUpon>
     </Compile>
+    <Compile Include="IntermediaryClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="About.resx">
