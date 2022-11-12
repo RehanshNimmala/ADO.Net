@@ -50,6 +50,7 @@
             this.Controls.Add(this.allCustomersDataGridView);
             this.Name = "AllCustomers";
             this.Text = "AllCustomers";
+            this.Load += new System.EventHandler(this.AllCustomers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.allCustomersDataGridView)).EndInit();
             this.ResumeLayout(false);
 

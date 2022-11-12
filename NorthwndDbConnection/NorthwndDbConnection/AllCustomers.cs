@@ -16,5 +16,10 @@ namespace NorthwndDbConnection
         {
             InitializeComponent();
         }
+
+        private void AllCustomers_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
