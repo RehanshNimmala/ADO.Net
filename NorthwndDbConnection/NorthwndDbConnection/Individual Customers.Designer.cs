@@ -50,6 +50,8 @@
             this.Controls.Add(this.individualDataGridView);
             this.Name = "Individual_Customers";
             this.Text = "Individual_Customers";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Individual_Customers_FormClosing);
+            this.Load += new System.EventHandler(this.Individual_Customers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.individualDataGridView)).EndInit();
             this.ResumeLayout(false);
 

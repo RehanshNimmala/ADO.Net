@@ -32,7 +32,7 @@ namespace NorthwndDbConnection
         private void individualCustomersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Instantiate the class
-            Individual_Customers individual_Customers = new Individual_Customers();
+            Individual_Customers individual_Customers =  Individual_Customers.GetForm();
             individual_Customers.MdiParent = this;
             individual_Customers.Show();
 
@@ -41,7 +41,7 @@ namespace NorthwndDbConnection
         private void allCustomersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Instantiate the class
-            AllCustomers all_Customers = new AllCustomers();    
+            AllCustomers all_Customers =  AllCustomers.GetForm();    
             all_Customers.MdiParent = this;
             all_Customers.Show();
         }
