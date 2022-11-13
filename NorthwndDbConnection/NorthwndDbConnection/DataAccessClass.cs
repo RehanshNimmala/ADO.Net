@@ -32,7 +32,7 @@ namespace NorthwndDbConnection
         public string ErrorReturned { get; set; }
 
         //Connection string: This will need to be created inside the form that has the project
-        private string nwConnectionString = ConfigurationManager.ConnectionStrings["NorthwndDBConnection.Properties.Settings.northwndDb"].ConnectionString;
+        private string nwConnectionString = ConfigurationManager.ConnectionStrings["NorthwndDBConnection.Properties.Settings.nWConnection"].ConnectionString;
 
 
         //Step 2: Connection, Open and close methods
