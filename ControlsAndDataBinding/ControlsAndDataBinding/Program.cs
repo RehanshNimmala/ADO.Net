@@ -16,7 +16,7 @@ namespace ControlsAndDataBinding
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ControlsAndDataBinding());
+            Application.Run(new BindingControlsForm());
         }
     }
 }
