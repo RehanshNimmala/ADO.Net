@@ -13,7 +13,7 @@ namespace NimmalaWeek14
         } //overloaded ctor
 
 
-        public SalesSpyFoundException(string SpyName, Exception innerException) : base($"Sales Spy Found:Spy Name{spyName}", innerException)
+        public SalesSpyFoundException(string spyName, Exception innerException) : base($"Sales Spy Found:Spy Name{spyName}", innerException)
 
         { 
         }//overloaded ctor
