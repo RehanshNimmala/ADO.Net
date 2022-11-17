@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace NimmalaWeek14
         //variables
         private FileStream fileStream;
         private StreamReader streamReader;
-        private unit numberOfPeopleToCall;
+        private uint numberOfPeopleToCall;
         private bool isDisposed = false;
         private bool isOPen=false;
 
@@ -33,14 +34,14 @@ namespace NimmalaWeek14
             try
             {
                 string firstLine=streamReader.ReadLine();//read the first line
-                numberOfPeopleToCall = unit.Parse(firstLine);
+                numberOfPeopleToCall = uint.Parse(firstLine);
 
                 isOPen=true;
             }
             catch(FormatException ex)
             {
-                throw new ColdCallFileFormatException($"Firdt LIne is not an Integer", ex());
-            }//trycatch
+                throw new ColdCallFileFormatException($"First Line is not an Integer", (ex));
+            }//trycatchorma
 
         }//open
 
@@ -79,19 +80,40 @@ namespace NimmalaWeek14
 
         }//processNextPerson();
 
-        public unit NumberOfPeopleToCall
+        public uint NumberOfPeopleToCall
         {
             get
             {
-                if(isDisposed)
+                if (isDisposed)
                 {
                     throw new ObjectDisposedException("people to call");
+                }
                     if(!isOPen)
                     {
                         throw new UnexpectedException("Attempt to accessa coldcall file is not open");
-                    }
-                }
+                    }//if
+                     //returm number of people to call
+                return numberOfPeopleToCall;
+            }//get
+        }//property
+        public void DisposeFileStream()
+        {
+            if(isDisposed)
+            {
+                //Exit the method
+                return;
+            }//if
+            //set flags
+            isDisposed = true;
+            isOPen= false;
+            //close the file stream
+            if(fileStream!=null)
+            {
+                fileStream.Close();
+                fileStream.Dispose();
+                fileStream=null;
             }
-        }
-    }
-}
+
+        }//Disp[ose
+    }//class
+}//Namespace
