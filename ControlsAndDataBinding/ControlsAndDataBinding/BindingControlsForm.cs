@@ -19,12 +19,12 @@ namespace ControlsAndDataBinding
 
         private void BindingControlsForm_Load(object sender, EventArgs e)
         {
-            DALClassLibrary.ConnectToNW connectClass = new DALClassLibrary.ConnectToNW();//Instantiated
+            ControlsAndDataBinding.ConnectToNW connectClass = new ControlsAndDataBinding.ConnectToNW();//Instantiated
 
             DataTable customersDataTable =  connectClass.GetCustomersData();
             BindingSource customersBindingSource= new BindingSource();
             customersBindingSource.DataSource = customersDataTable;
-            customersBindingSource.Sort = "CompanyName";// if wants to sort the data
+            //customersBindingSource.Sort = "CompanyName";// if wants to sort the data
 
             //Bind the data to labels:
             contactLabel.DataBindings.Add("Text", customersBindingSource, "ContactName", false, DataSourceUpdateMode.Never);
@@ -49,9 +49,9 @@ namespace ControlsAndDataBinding
         private void orderButton_Click(object sender, EventArgs e)
         {
             string custID=companyComboBox.SelectedValue.ToString();
-            DALClassLibrary.ConnectToNW connectClass = new DALClassLibrary.ConnectToNW();
+            ControlsAndDataBinding.ConnectToNW connectClass = new ControlsAndDataBinding.ConnectToNW();
 
-            ordersDataGridView.DataSource = connectClass.getOrdersData(custID);
+            ordersDataGridView.DataSource = connectClass.GetOrdersData(custID);
             ordersDataGridView.AllowUserToAddRows = false;
             ordersDataGridView.AllowUserToDeleteRows = false;
         }// end orderdetails

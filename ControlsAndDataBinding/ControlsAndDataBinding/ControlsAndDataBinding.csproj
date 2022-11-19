@@ -70,6 +70,7 @@
     <Compile Include="BindingControlsForm.Designer.cs">
       <DependentUpon>BindingControlsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConnectToNW.cs" />
     <Compile Include="NorthwindClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
