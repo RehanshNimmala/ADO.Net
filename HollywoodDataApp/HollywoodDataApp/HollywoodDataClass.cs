@@ -33,5 +33,34 @@ namespace HollywoodDataApp
         {
             HWConnection.Close();
         }//Close Connection
+        private SqlDataReader GetReader(string procNameOrQuery, CommandType cmdType, SqlParameter param1 = null, SqlParameter param2 = null,
+            SqlParameter param3 = null, SqlParameter param4 = null, SqlParameter param5 = null, SqlParameter param6 = null )
+        {
+            //Instantiate the command object
+            SqlCommand hwSqlCommand = new SqlCommand(procNameOrQuery, this.GetConnection());
+            hwSqlCommand.CommandType = cmdType;// set the cmd type as incoming cmdType:How the sqlcomand text is to be interpreted.
+            //set the parameters (parameters are the incoming values)
+            if(param1 != null)hwSqlCommand.Parameters.Add(param1);
+            if(param2 != null)hwSqlCommand.Parameters.Add(param2);
+            if(param3 != null)hwSqlCommand.Parameters.Add(param3);
+            if(param4 != null)hwSqlCommand.Parameters.Add(param4);
+            if(param5 != null)hwSqlCommand.Parameters.Add(param5);
+            if(param6 != null)hwSqlCommand.Parameters.Add(param6);
+
+            try
+            {
+                this.OpenConnection();
+                return hwSqlCommand.ExecuteReader();// returns one row at a time
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                hwSqlCommand.Dispose();
+            }
+        }//GetReader()
     }
 }
