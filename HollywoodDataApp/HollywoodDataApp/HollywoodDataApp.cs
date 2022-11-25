@@ -21,5 +21,35 @@ namespace HollywoodDataApp
         {
             this.Close();
         }//Exit
+
+       
+        private void addNewMovieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddMovieForm addMoviesForm = new AddMovieForm();
+            addMoviesForm.Parent = this;
+            addMoviesForm.Show();   
+        }
+
+        private void getBestPicturesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BestPicturesForm bestPicturesForm = new BestPicturesForm();
+            bestPicturesForm.Parent = this;
+            bestPicturesForm.Show();
+        }
+
+        private void allActorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActorsForm actorsForm = new ActorsForm();
+            actorsForm.Parent = this;
+            actorsForm.Show();
+        }
+
+        private void moviesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MoviesForm moviesForm = new MoviesForm();
+            moviesForm.Parent = this;
+            moviesForm.Show();
+
+        }
     }
 }
