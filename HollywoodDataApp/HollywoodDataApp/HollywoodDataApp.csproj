@@ -47,7 +47,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActorsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActorsForm.Designer.cs">
+      <DependentUpon>ActorsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ActorsIntermediary.cs" />
+    <Compile Include="BestPicturesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BestPicturesForm.Designer.cs">
+      <DependentUpon>BestPicturesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="HollywoodDataApp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +76,12 @@
     <Compile Include="MoviesIntermediary.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ActorsForm.resx">
+      <DependentUpon>ActorsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BestPicturesForm.resx">
+      <DependentUpon>BestPicturesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HollywoodDataApp.resx">
       <DependentUpon>HollywoodDataApp.cs</DependentUpon>
     </EmbeddedResource>
