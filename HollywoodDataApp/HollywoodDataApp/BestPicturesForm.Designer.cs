@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.bestPicturesDataGridView = new System.Windows.Forms.DataGridView();
+            this.exitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bestPicturesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,14 +43,27 @@
             this.bestPicturesDataGridView.Size = new System.Drawing.Size(759, 384);
             this.bestPicturesDataGridView.TabIndex = 0;
             // 
+            // exitButton
+            // 
+            this.exitButton.Location = new System.Drawing.Point(699, 465);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(113, 43);
+            this.exitButton.TabIndex = 1;
+            this.exitButton.Text = "&Exit";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
             // BestPicturesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(931, 540);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.bestPicturesDataGridView);
             this.Name = "BestPicturesForm";
             this.Text = "BestPicturesForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BestPicturesForm_FormClosing);
+            this.Load += new System.EventHandler(this.BestPicturesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bestPicturesDataGridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -58,5 +72,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView bestPicturesDataGridView;
+        private System.Windows.Forms.Button exitButton;
     }
 }
