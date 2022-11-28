@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.moviesComboBox = new System.Windows.Forms.ComboBox();
+            this.actorsGridView = new System.Windows.Forms.DataGridView();
             this.showActorsButton = new System.Windows.Forms.Button();
             this.countMoviesButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.countLabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actorsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -43,27 +43,27 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(63, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 20);
+            this.label1.Size = new System.Drawing.Size(60, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Movie ID";
             // 
-            // comboBox1
+            // moviesComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(171, 53);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(145, 24);
-            this.comboBox1.TabIndex = 1;
+            this.moviesComboBox.FormattingEnabled = true;
+            this.moviesComboBox.Location = new System.Drawing.Point(171, 53);
+            this.moviesComboBox.Name = "moviesComboBox";
+            this.moviesComboBox.Size = new System.Drawing.Size(145, 24);
+            this.moviesComboBox.TabIndex = 1;
             // 
-            // dataGridView1
+            // actorsGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(66, 138);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(609, 195);
-            this.dataGridView1.TabIndex = 2;
+            this.actorsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.actorsGridView.Location = new System.Drawing.Point(66, 138);
+            this.actorsGridView.Name = "actorsGridView";
+            this.actorsGridView.RowHeadersWidth = 51;
+            this.actorsGridView.RowTemplate.Height = 24;
+            this.actorsGridView.Size = new System.Drawing.Size(609, 195);
+            this.actorsGridView.TabIndex = 2;
             // 
             // showActorsButton
             // 
@@ -73,6 +73,7 @@
             this.showActorsButton.TabIndex = 3;
             this.showActorsButton.Text = "Show Actors in the Movie";
             this.showActorsButton.UseVisualStyleBackColor = true;
+            this.showActorsButton.Click += new System.EventHandler(this.showActorsButton_Click);
             // 
             // countMoviesButton
             // 
@@ -82,14 +83,15 @@
             this.countMoviesButton.TabIndex = 4;
             this.countMoviesButton.Text = "Count of Movies";
             this.countMoviesButton.UseVisualStyleBackColor = true;
+            this.countMoviesButton.Click += new System.EventHandler(this.countMoviesButton_Click);
             // 
-            // label2
+            // countLabel
             // 
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(293, 375);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(382, 37);
-            this.label2.TabIndex = 5;
+            this.countLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.countLabel.Location = new System.Drawing.Point(293, 375);
+            this.countLabel.Name = "countLabel";
+            this.countLabel.Size = new System.Drawing.Size(382, 37);
+            this.countLabel.TabIndex = 5;
             // 
             // exitButton
             // 
@@ -99,6 +101,7 @@
             this.exitButton.TabIndex = 6;
             this.exitButton.Text = "E&xit";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // MoviesForm
             // 
@@ -106,15 +109,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 494);
             this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.countLabel);
             this.Controls.Add(this.countMoviesButton);
             this.Controls.Add(this.showActorsButton);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.actorsGridView);
+            this.Controls.Add(this.moviesComboBox);
             this.Controls.Add(this.label1);
             this.Name = "MoviesForm";
             this.Text = "MoviesForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MoviesForm_FormClosing);
+            this.Load += new System.EventHandler(this.MoviesForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.actorsGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,11 +128,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox moviesComboBox;
+        private System.Windows.Forms.DataGridView actorsGridView;
         private System.Windows.Forms.Button showActorsButton;
         private System.Windows.Forms.Button countMoviesButton;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label countLabel;
         private System.Windows.Forms.Button exitButton;
     }
 }
