@@ -25,29 +25,29 @@ namespace HollywoodDataApp
        
         private void addNewMovieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddMovieForm addMoviesForm = new AddMovieForm();
-            addMoviesForm.Parent = this;
+            AddMovieForm addMoviesForm = AddMovieForm.AddMovieInstance();
+            addMoviesForm.MdiParent = this;
             addMoviesForm.Show();   
         }
 
         private void getBestPicturesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BestPicturesForm bestPicturesForm =  BestPicturesForm.BestPicturesInstance();
-            bestPicturesForm.Parent = this;
+            bestPicturesForm.MdiParent = this;
             bestPicturesForm.Show();
         }
 
         private void allActorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ActorsForm actorsForm =  ActorsForm.ActorsFormInstance();
-            actorsForm.Parent = this;
+            actorsForm.MdiParent = this;
             actorsForm.Show();
         }
 
         private void moviesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             MoviesForm moviesForm =  MoviesForm.MoviesFormInstance();
-            moviesForm.Parent = this;
+            moviesForm.MdiParent = this;
             moviesForm.Show();
 
         }
