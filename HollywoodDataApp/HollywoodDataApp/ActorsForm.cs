@@ -12,9 +12,36 @@ namespace HollywoodDataApp
 {
     public partial class ActorsForm : Form
     {
-        public ActorsForm()
+        //from instance
+        private static ActorsForm actorsForm;
+        private ActorsForm()
         {
             InitializeComponent();
-        }
-    }
-}
+        }//ctor
+        public static ActorsForm ActorsFormInstance()
+        {
+            if (actorsForm == null)
+                actorsForm = new ActorsForm();
+            return actorsForm;
+        }//ActorsFormInstance()
+
+        private void ActorsForm_Load(object sender, EventArgs e)
+        {
+            //Instantiate the class
+            ActorsIntermediary actorsIntermediary = new ActorsIntermediary();
+
+            try
+            {
+                actorsDataGridView.DataSource = actorsIntermediary.GetAllActors();//Assign data to grid view
+
+                //formatting
+                actorsDataGridView.ReadOnly = true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }//Form_load
+    }//class
+}//Namespace

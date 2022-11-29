@@ -12,9 +12,14 @@ namespace HollywoodDataApp
 {
     public partial class AddMovieForm : Form
     {
+       
+       
         public AddMovieForm()
         {
             InitializeComponent();
-        }
+        }//ctor
+
+       
+
     }
 }

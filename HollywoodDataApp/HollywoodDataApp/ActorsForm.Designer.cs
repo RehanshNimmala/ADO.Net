@@ -50,6 +50,7 @@
             this.Controls.Add(this.actorsDataGridView);
             this.Name = "ActorsForm";
             this.Text = "ActorsForm";
+            this.Load += new System.EventHandler(this.ActorsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.actorsDataGridView)).EndInit();
             this.ResumeLayout(false);
 
