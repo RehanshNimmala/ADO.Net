@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,54 +62,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActorsForm.cs">
+    <Compile Include="UIForms\ActorsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ActorsForm.Designer.cs">
+    <Compile Include="UIForms\ActorsForm.Designer.cs">
       <DependentUpon>ActorsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ActorsIntermediary.cs" />
-    <Compile Include="AddMovieForm.cs">
+    <Compile Include="IntermediaryClass\ActorsIntermediary.cs" />
+    <Compile Include="UIForms\AddMovieForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddMovieForm.Designer.cs">
+    <Compile Include="UIForms\AddMovieForm.Designer.cs">
       <DependentUpon>AddMovieForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BestPicturesForm.cs">
+    <Compile Include="UIForms\BestPicturesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BestPicturesForm.Designer.cs">
+    <Compile Include="UIForms\BestPicturesForm.Designer.cs">
       <DependentUpon>BestPicturesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HollywoodDataApp.cs">
+    <Compile Include="UIForms\HollywoodDataApp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HollywoodDataApp.Designer.cs">
+    <Compile Include="UIForms\HollywoodDataApp.Designer.cs">
       <DependentUpon>HollywoodDataApp.cs</DependentUpon>
     </Compile>
-    <Compile Include="HollywoodDataClass.cs" />
-    <Compile Include="MoviesForm.cs">
+    <Compile Include="DataAccessClass\HollywoodDataClass.cs" />
+    <Compile Include="UIForms\MoviesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MoviesForm.Designer.cs">
+    <Compile Include="UIForms\MoviesForm.Designer.cs">
       <DependentUpon>MoviesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MoviesIntermediary.cs" />
+    <Compile Include="IntermediaryClass\MoviesIntermediary.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ActorsForm.resx">
+    <EmbeddedResource Include="UIForms\ActorsForm.resx">
       <DependentUpon>ActorsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddMovieForm.resx">
+    <EmbeddedResource Include="UIForms\AddMovieForm.resx">
       <DependentUpon>AddMovieForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BestPicturesForm.resx">
+    <EmbeddedResource Include="UIForms\BestPicturesForm.resx">
       <DependentUpon>BestPicturesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HollywoodDataApp.resx">
+    <EmbeddedResource Include="UIForms\HollywoodDataApp.resx">
       <DependentUpon>HollywoodDataApp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MoviesForm.resx">
+    <EmbeddedResource Include="UIForms\MoviesForm.resx">
       <DependentUpon>MoviesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -118,6 +133,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppData\Hollywood.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\Hollywood_log.ldf">
+      <DependentUpon>Hollywood.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
