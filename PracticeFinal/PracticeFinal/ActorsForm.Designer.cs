@@ -1,4 +1,4 @@
-﻿namespace HollywoodDataApp
+﻿namespace PracticeFinal
 {
     partial class ActorsForm
     {
@@ -28,37 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.actorsDataGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.actorsDataGridView)).BeginInit();
+            this.dataGridViewActors = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActors)).BeginInit();
             this.SuspendLayout();
             // 
-            // actorsDataGridView
+            // dataGridViewActors
             // 
-            this.actorsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.actorsDataGridView.Location = new System.Drawing.Point(12, 12);
-            this.actorsDataGridView.Name = "actorsDataGridView";
-            this.actorsDataGridView.RowHeadersWidth = 51;
-            this.actorsDataGridView.RowTemplate.Height = 24;
-            this.actorsDataGridView.Size = new System.Drawing.Size(707, 360);
-            this.actorsDataGridView.TabIndex = 0;
+            this.dataGridViewActors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewActors.Location = new System.Drawing.Point(34, 24);
+            this.dataGridViewActors.Name = "dataGridViewActors";
+            this.dataGridViewActors.RowHeadersWidth = 51;
+            this.dataGridViewActors.RowTemplate.Height = 24;
+            this.dataGridViewActors.Size = new System.Drawing.Size(720, 339);
+            this.dataGridViewActors.TabIndex = 0;
             // 
             // ActorsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.actorsDataGridView);
+            this.Controls.Add(this.dataGridViewActors);
             this.Name = "ActorsForm";
             this.Text = "ActorsForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ActorsForm_FormClosing);
-            this.Load += new System.EventHandler(this.ActorsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.actorsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActors)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView actorsDataGridView;
+        private System.Windows.Forms.DataGridView dataGridViewActors;
     }
 }

@@ -43,5 +43,10 @@ namespace HollywoodDataApp
                 throw;
             }
         }//Form_load
+
+        private void ActorsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+          actorsForm=null;
+        }
     }//class
 }//Namespace
