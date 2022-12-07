@@ -60,7 +60,8 @@ namespace HollywoodDataApp
             //need to supply the parameter as string and datatype of the parameter.
             param.Value = movieID;//supply the value for the parameter string.
             //create the sqlQuery with the parameter as criteria in the where clause.
-            string sqlQuery = "select lastName, FirstName, DateOfBirth from Actors a join roles r in a.ActorId=r.ActorId where movieId=@movieID";
+            string sqlQuery = "select lastName, FirstName, DateOfBirth from Actors a " +
+                "join roles r on a.ActorId=r.ActorId where movieId=@movieID";
 
             try
             {

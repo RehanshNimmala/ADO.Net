@@ -28,5 +28,22 @@ namespace PracticeFinal
         {
          actorsFormInstance=null;
         }
+
+        private void ActorsForm_Load(object sender, EventArgs e)
+        {
+            //Instantiate the class
+            ActorsIntermediary actorsIntermediary = new ActorsIntermediary();
+            try
+            {
+                dataGridViewActors.DataSource = actorsIntermediary.GetAllActors();
+                dataGridViewActors.ReadOnly = true;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

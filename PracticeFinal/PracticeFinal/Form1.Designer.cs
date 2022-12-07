@@ -98,14 +98,15 @@
             // addNewMovieToolStripMenuItem
             // 
             this.addNewMovieToolStripMenuItem.Name = "addNewMovieToolStripMenuItem";
-            this.addNewMovieToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.addNewMovieToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.addNewMovieToolStripMenuItem.Text = "Add New Movie";
             // 
             // getBestPicturesToolStripMenuItem
             // 
             this.getBestPicturesToolStripMenuItem.Name = "getBestPicturesToolStripMenuItem";
-            this.getBestPicturesToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.getBestPicturesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.getBestPicturesToolStripMenuItem.Text = "Get Best Pictures";
+            this.getBestPicturesToolStripMenuItem.Click += new System.EventHandler(this.getBestPicturesToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 

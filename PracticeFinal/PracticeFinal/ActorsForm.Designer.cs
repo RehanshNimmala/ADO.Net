@@ -51,6 +51,7 @@
             this.Name = "ActorsForm";
             this.Text = "ActorsForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ActorsForm_FormClosing);
+            this.Load += new System.EventHandler(this.ActorsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActors)).EndInit();
             this.ResumeLayout(false);
 
