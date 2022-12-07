@@ -30,5 +30,12 @@ namespace PracticeFinal
             actorsForm.MdiParent = this;
             actorsForm.Show();
         }
+
+        private void getBestPicturesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GetBestPictures getBestPictures= GetBestPictures.GetBestPicturesInstance();
+            getBestPictures.MdiParent = this;
+            getBestPictures.Show();
+        }
     }
 }
