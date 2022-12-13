@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,6 +38,12 @@
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.salaryTextBox = new System.Windows.Forms.TextBox();
             this.exitButton = new System.Windows.Forms.Button();
+            this.firstNameErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lastNameErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.salaryErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.firstNameErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lastNameErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salaryErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -44,7 +51,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(67, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 20);
+            this.label1.Size = new System.Drawing.Size(72, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "First Name";
             // 
@@ -53,7 +60,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(67, 126);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 20);
+            this.label2.Size = new System.Drawing.Size(72, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Last Name";
             // 
@@ -62,7 +69,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(67, 206);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 20);
+            this.label3.Size = new System.Drawing.Size(46, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Salary";
             // 
@@ -73,6 +80,7 @@
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(327, 22);
             this.firstNameTextBox.TabIndex = 3;
+            this.firstNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.firstNameValidating);
             // 
             // insertButton
             // 
@@ -99,6 +107,7 @@
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(327, 22);
             this.lastNameTextBox.TabIndex = 6;
+            this.lastNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.lastNameValidating);
             // 
             // salaryTextBox
             // 
@@ -107,6 +116,7 @@
             this.salaryTextBox.Name = "salaryTextBox";
             this.salaryTextBox.Size = new System.Drawing.Size(327, 22);
             this.salaryTextBox.TabIndex = 7;
+            this.salaryTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.salaryValidating);
             // 
             // exitButton
             // 
@@ -117,6 +127,18 @@
             this.exitButton.Text = "E&xit";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // firstNameErrorProvider
+            // 
+            this.firstNameErrorProvider.ContainerControl = this;
+            // 
+            // lastNameErrorProvider
+            // 
+            this.lastNameErrorProvider.ContainerControl = this;
+            // 
+            // salaryErrorProvider
+            // 
+            this.salaryErrorProvider.ContainerControl = this;
             // 
             // Form1
             // 
@@ -135,6 +157,9 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.firstNameErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lastNameErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salaryErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,6 +176,9 @@
         private System.Windows.Forms.TextBox lastNameTextBox;
         private System.Windows.Forms.TextBox salaryTextBox;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.ErrorProvider firstNameErrorProvider;
+        private System.Windows.Forms.ErrorProvider lastNameErrorProvider;
+        private System.Windows.Forms.ErrorProvider salaryErrorProvider;
     }
 }
 

@@ -32,9 +32,10 @@ namespace NPGoldDBConnection
                 {
                     string firstName = firstNameTextBox.Text;
                     string lastName = lastNameTextBox.Text;
+                    int salary = int.Parse(salaryTextBox.Text);
+
                     if (salaryTextBox.Text.Length > 0)
                     {
-                        int salary = int.Parse(salaryTextBox.Text);
 
 
                         //Instantiate the Intermediary class
@@ -63,5 +64,51 @@ namespace NPGoldDBConnection
         {
             this.Close();
         }
+
+        private void firstNameValidating(object sender, CancelEventArgs e)
+        {
+            // verifying the correct input
+            if(firstNameTextBox.Text.Length>0)
+            {
+                firstNameErrorProvider.SetError(firstNameTextBox, "");
+            }
+            else
+            {
+                firstNameErrorProvider.SetError(firstNameTextBox, "Please enter valid Name");
+                firstNameTextBox.Focus();
+                firstNameTextBox.SelectAll();
+
+            }//
+        }//FirstName Validating
+
+        private void lastNameValidating(object sender, CancelEventArgs e)
+        {
+            if(lastNameTextBox.Text.Length>0)
+            {
+                lastNameErrorProvider.SetError(lastNameTextBox, "");
+            }
+            else
+            {
+                lastNameErrorProvider.SetError(lastNameTextBox, "Please enter the Last Name");
+                lastNameTextBox.Focus();
+                lastNameTextBox.SelectAll();
+            }
+        }//LastName validating
+
+        private void salaryValidating(object sender, CancelEventArgs e)
+        {
+           // int salary=int.Parse(salaryTextBox.Text);
+            if(salaryTextBox.Text.Length>0)
+            {
+                salaryErrorProvider.SetError(salaryTextBox, "");
+
+            }
+            else
+            {
+                salaryErrorProvider.SetError(salaryTextBox, "Please enter a valid salary amount");
+                salaryTextBox.Focus();
+                salaryTextBox.SelectAll();
+            }
+        }//Salary Validating
     }
 }
