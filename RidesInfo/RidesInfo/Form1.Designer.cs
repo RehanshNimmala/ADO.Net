@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,7 +44,9 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.ridesGridView = new System.Windows.Forms.DataGridView();
+            this.pickupErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ridesGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickupErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -106,6 +109,7 @@
             this.txtPickUp.Name = "txtPickUp";
             this.txtPickUp.Size = new System.Drawing.Size(100, 22);
             this.txtPickUp.TabIndex = 6;
+            this.txtPickUp.Validating += new System.ComponentModel.CancelEventHandler(this.pickup_validating);
             // 
             // txtDrop
             // 
@@ -181,6 +185,10 @@
             this.ridesGridView.Size = new System.Drawing.Size(710, 297);
             this.ridesGridView.TabIndex = 14;
             // 
+            // pickupErrorProvider
+            // 
+            this.pickupErrorProvider.ContainerControl = this;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -204,6 +212,7 @@
             this.Name = "Form1";
             this.Text = "Rides Details";
             ((System.ComponentModel.ISupportInitialize)(this.ridesGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickupErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,6 +235,7 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DataGridView ridesGridView;
+        private System.Windows.Forms.ErrorProvider pickupErrorProvider;
     }
 }
 
