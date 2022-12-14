@@ -17,6 +17,9 @@ namespace RidesInfo
         {
             //Declaring the variables
 
+            
+            try
+            {
             string pickUp=txtPickUp.Text;
             string rideDate = DateTime.Now.ToShortDateString();
             string drop=txtDrop.Text;   
@@ -25,8 +28,8 @@ namespace RidesInfo
 
             //Establishing the connection string
 
-            try
-            {
+            
+            
                 
 
                 //Create an object for the SQL connection class
@@ -179,6 +182,19 @@ namespace RidesInfo
             ridesGridView.DataSource = list;
  
         }
-        
+
+        private void pickup_validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+          if(txtPickUp.Text.Length>0)
+            {
+                pickupErrorProvider.SetError(txtPickUp, "");
+            }
+            else
+            {
+                pickupErrorProvider.SetError(txtPickUp, "Please enter a pickup place");
+                txtPickUp.Focus();
+                txtPickUp.SelectAll();
+            }
+        }//validation
     }
 }
