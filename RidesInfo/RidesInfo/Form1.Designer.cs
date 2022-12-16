@@ -45,8 +45,10 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.ridesGridView = new System.Windows.Forms.DataGridView();
             this.pickupErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dropPointErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ridesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickupErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dropPointErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -118,6 +120,7 @@
             this.txtDrop.Name = "txtDrop";
             this.txtDrop.Size = new System.Drawing.Size(100, 22);
             this.txtDrop.TabIndex = 7;
+            this.txtDrop.Validating += new System.ComponentModel.CancelEventHandler(this.dropPoint_validating);
             // 
             // txtDistance
             // 
@@ -189,6 +192,10 @@
             // 
             this.pickupErrorProvider.ContainerControl = this;
             // 
+            // dropPointErrorProvider
+            // 
+            this.dropPointErrorProvider.ContainerControl = this;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -213,6 +220,7 @@
             this.Text = "Rides Details";
             ((System.ComponentModel.ISupportInitialize)(this.ridesGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickupErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dropPointErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,6 +244,7 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DataGridView ridesGridView;
         private System.Windows.Forms.ErrorProvider pickupErrorProvider;
+        private System.Windows.Forms.ErrorProvider dropPointErrorProvider;
     }
 }
 

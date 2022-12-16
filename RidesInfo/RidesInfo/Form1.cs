@@ -196,5 +196,20 @@ namespace RidesInfo
                 txtPickUp.SelectAll();
             }
         }//validation
+
+        private void dropPoint_validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (txtDrop.Text.Length > 0)
+            {
+                dropPointErrorProvider.SetError(txtDrop, "");
+            }
+            else
+            {
+                dropPointErrorProvider.SetError(txtDrop, "Please enter a Drop place");
+                txtDrop.Focus();
+                txtDrop.SelectAll();
+            }
+
+        }
     }
 }
