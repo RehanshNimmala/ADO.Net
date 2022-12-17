@@ -42,8 +42,10 @@
             this.updateButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nameErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // exitButton
@@ -73,6 +75,7 @@
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(196, 22);
             this.nameTextBox.TabIndex = 2;
+            this.nameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.name_validating);
             // 
             // nameLabel
             // 
@@ -167,6 +170,10 @@
             this.dataGridView.Size = new System.Drawing.Size(511, 259);
             this.dataGridView.TabIndex = 11;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -188,6 +195,7 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.nameErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,6 +216,7 @@
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
