@@ -141,5 +141,19 @@ namespace Branson
         {
             this.Close();
         }
+
+        private void name_validating(object sender, CancelEventArgs e)
+        {
+            if (nameTextBox.Text.Length > 0)
+            {
+                nameErrorProvider.SetError(nameTextBox, "");
+            }
+            else
+            {
+                nameErrorProvider.SetError(nameTextBox, "Please enter a Name");
+                nameTextBox.Focus();
+                nameTextBox.SelectAll();
+            }
+        }
     }
 }
