@@ -90,6 +90,7 @@
             this.exitButton.TabIndex = 5;
             this.exitButton.Text = "E&xit";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // resultTextBox
             // 
