@@ -55,6 +55,7 @@
     <Compile Include="IDrivable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaceCar.cs" />
     <Compile Include="Vehicle.cs" />
     <EmbeddedResource Include="Automobiles.resx">
       <DependentUpon>Automobiles.cs</DependentUpon>
