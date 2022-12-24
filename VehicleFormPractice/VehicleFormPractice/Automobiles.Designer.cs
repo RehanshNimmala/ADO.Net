@@ -74,6 +74,7 @@
             this.motorcycleButton.TabIndex = 3;
             this.motorcycleButton.Text = "MotorCycle";
             this.motorcycleButton.UseVisualStyleBackColor = true;
+            this.motorcycleButton.Click += new System.EventHandler(this.motorcycleButton_Click);
             // 
             // truckButton
             // 
@@ -83,6 +84,7 @@
             this.truckButton.TabIndex = 4;
             this.truckButton.Text = "Truck";
             this.truckButton.UseVisualStyleBackColor = true;
+            this.truckButton.Click += new System.EventHandler(this.truckButton_Click);
             // 
             // exitButton
             // 

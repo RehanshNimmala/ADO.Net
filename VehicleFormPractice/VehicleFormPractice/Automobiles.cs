@@ -60,5 +60,37 @@ namespace VehicleFormPractice
                 $"The Name of assembly is {objectName.GetType().Assembly.GetName()}{lineBreaker}" +
                 $"More details about this class :{objectName.ToString()}{lineBreaker}";
         }
-    }
-}
+
+        private void motorcycleButton_Click(object sender, EventArgs e)
+        {
+            /*You are using a var(varient) keyword here instead of specific object type.
+             * var assumes the type of the object assigned to it.in this case, Motorcycle.
+             * */
+            var motorCycle = new MotorCycle(70);
+            //see you only supplied one argument for the constructor
+
+            string message = ObjDetails(motorCycle);
+            message += $"More details:{motorCycle.About}";
+            message += $@"Output comes from MotorCycle class{lineBreaker}Overloaded method with 
+                            one parametersupplied(distance):{motorCycle.Drive(700)}.
+                    You were driving within the speed limit of {motorCycle.MaximumSpeed}MPH.{lineBreaker}
+                Now call the overloaded method with two parameters(distance and speed Driven as 140)
+                    {motorCycle.Drive(750, 140)}.The speed limit was{motorCycle.MaximumSpeed}.
+                    You dont get to drive over the speed limiteven if you have a motorcycle.{lineBreaker}
+            Now call the Drive method with a driving speed as 50 MPH:{motorCycle.Drive(350.50)}: Observe that the lower speed 
+                    of 50 MPH used for calculations.";
+            resultTextBox.Text = message;
+
+        }
+
+        private void truckButton_Click(object sender, EventArgs e)
+        {
+            //Instantiate the truck class
+            Truck truck = new Truck(20000);
+            //calling the classes and properties in truck class and displaying the details by calling the ObjDetailsmethod:
+            string message = ObjDetails(truck);
+            message += $"{Environment.NewLine}Axle Weight:{truck.AxleWeight}pounds.";
+            resultTextBox.Text = message;
+        }
+    }//end form
+}//namespace
