@@ -54,6 +54,7 @@
             this.sedanButton.TabIndex = 1;
             this.sedanButton.Text = "Sedan";
             this.sedanButton.UseVisualStyleBackColor = true;
+            this.sedanButton.Click += new System.EventHandler(this.sedanButton_Click);
             // 
             // raceCarButton
             // 
@@ -63,6 +64,7 @@
             this.raceCarButton.TabIndex = 2;
             this.raceCarButton.Text = "Race Car";
             this.raceCarButton.UseVisualStyleBackColor = true;
+            this.raceCarButton.Click += new System.EventHandler(this.raceCarButton_Click);
             // 
             // motorcycleButton
             // 
