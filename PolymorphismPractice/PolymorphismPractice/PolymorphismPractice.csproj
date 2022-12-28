@@ -49,15 +49,18 @@
     <Compile Include="ClassCircle.cs" />
     <Compile Include="ClassRectangle.cs" />
     <Compile Include="ClassShape.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Polymorphism.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Polymorphism.Designer.cs">
+      <DependentUpon>Polymorphism.cs</DependentUpon>
     </Compile>
     <Compile Include="IPolyShapes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Polymorphism.resx">
+      <DependentUpon>Polymorphism.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
