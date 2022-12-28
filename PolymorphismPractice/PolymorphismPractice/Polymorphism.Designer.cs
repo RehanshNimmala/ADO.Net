@@ -47,6 +47,7 @@
             this.shapeButton.TabIndex = 0;
             this.shapeButton.Text = "Shape";
             this.shapeButton.UseVisualStyleBackColor = true;
+            this.shapeButton.Click += new System.EventHandler(this.shapeButton_Click);
             // 
             // circleButton
             // 
@@ -56,6 +57,7 @@
             this.circleButton.TabIndex = 1;
             this.circleButton.Text = "Circle";
             this.circleButton.UseVisualStyleBackColor = true;
+            this.circleButton.Click += new System.EventHandler(this.circleButton_Click);
             // 
             // rectangleButton
             // 
@@ -65,6 +67,7 @@
             this.rectangleButton.TabIndex = 2;
             this.rectangleButton.Text = "Rectangle";
             this.rectangleButton.UseVisualStyleBackColor = true;
+            this.rectangleButton.Click += new System.EventHandler(this.rectangleButton_Click);
             // 
             // upcastingButton
             // 
@@ -110,6 +113,7 @@
             this.exitButton.TabIndex = 7;
             this.exitButton.Text = "E&xit";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // resultTextBox
             // 
