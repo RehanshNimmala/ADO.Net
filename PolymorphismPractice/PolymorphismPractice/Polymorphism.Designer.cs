@@ -77,6 +77,7 @@
             this.upcastingButton.TabIndex = 3;
             this.upcastingButton.Text = "Upcasting by object instantiation";
             this.upcastingButton.UseVisualStyleBackColor = true;
+            this.upcastingButton.Click += new System.EventHandler(this.upcastingButton_Click);
             // 
             // upcastingByAssignmentButton
             // 
@@ -86,6 +87,7 @@
             this.upcastingByAssignmentButton.TabIndex = 4;
             this.upcastingByAssignmentButton.Text = "Upcasting by Assignment";
             this.upcastingByAssignmentButton.UseVisualStyleBackColor = true;
+            this.upcastingByAssignmentButton.Click += new System.EventHandler(this.upcastingByAssignmentButton_Click);
             // 
             // notDowncastingButton
             // 
@@ -95,6 +97,7 @@
             this.notDowncastingButton.TabIndex = 5;
             this.notDowncastingButton.Text = "Downcasting(How Not To Downcast)";
             this.notDowncastingButton.UseVisualStyleBackColor = true;
+            this.notDowncastingButton.Click += new System.EventHandler(this.notDowncastingButton_Click);
             // 
             // okDowncastingButton
             // 
@@ -104,6 +107,7 @@
             this.okDowncastingButton.TabIndex = 6;
             this.okDowncastingButton.Text = "Downcasting that is OK to do";
             this.okDowncastingButton.UseVisualStyleBackColor = true;
+            this.okDowncastingButton.Click += new System.EventHandler(this.okDowncastingButton_Click);
             // 
             // exitButton
             // 
