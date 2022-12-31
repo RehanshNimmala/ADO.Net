@@ -46,24 +46,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActorsForm.cs">
+    <Compile Include="UI Forms\ActorsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ActorsForm.Designer.cs">
+    <Compile Include="UI Forms\ActorsForm.Designer.cs">
       <DependentUpon>ActorsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HollywoodApplication.cs">
+    <Compile Include="UI Forms\AddMoviesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HollywoodApplication.Designer.cs">
+    <Compile Include="UI Forms\AddMoviesForm.Designer.cs">
+      <DependentUpon>AddMoviesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\BestPicturesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\BestPicturesForm.Designer.cs">
+      <DependentUpon>BestPicturesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\HollywoodApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\HollywoodApplication.Designer.cs">
       <DependentUpon>HollywoodApplication.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ActorsForm.resx">
+    <EmbeddedResource Include="UI Forms\ActorsForm.resx">
       <DependentUpon>ActorsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HollywoodApplication.resx">
+    <EmbeddedResource Include="UI Forms\AddMoviesForm.resx">
+      <DependentUpon>AddMoviesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\BestPicturesForm.resx">
+      <DependentUpon>BestPicturesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\HollywoodApplication.resx">
       <DependentUpon>HollywoodApplication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
