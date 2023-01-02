@@ -16,5 +16,12 @@ namespace HollywoodPractice
         {
             InitializeComponent();
         }
+
+        private void getBestPicturesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bestPicturesForm BestPicturesForm = bestPicturesForm.BestPicturesInstance();
+            BestPicturesForm.MdiParent = this;
+            BestPicturesForm.Show();
+        }
     }
 }
