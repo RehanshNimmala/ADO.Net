@@ -50,6 +50,12 @@
     <Compile Include="Intermediary Class\ActorsIntermediary.cs" />
     <Compile Include="DataAccessClass\DataAccess.cs" />
     <Compile Include="Intermediary Class\MoviesIntermediary.cs" />
+    <Compile Include="MoviesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoviesForm.Designer.cs">
+      <DependentUpon>MoviesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Forms\ActorsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MoviesForm.resx">
+      <DependentUpon>MoviesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\ActorsForm.resx">
       <DependentUpon>ActorsForm.cs</DependentUpon>
     </EmbeddedResource>
