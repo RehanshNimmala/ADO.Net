@@ -86,5 +86,35 @@ namespace HollywoodPractice
                 return null;
             }
         }//GetMovies()
+
+        public int AddMovie(int movieId, string movieTitle, int runningTime, System.DateTime releaseDate)
+        {
+            DataAccess dataAccess1 = new DataAccess();
+            // create the query string with placeholders for parameters:
+            string sqlQuery = "Insert into Movies values(@MovieId, @MovieTitle, @RunningTime, @ReleaseDate)";
+
+            //define the parameters and their data types
+            SqlParameter param1 = new SqlParameter("@MoviesId", SqlDbType.Int);
+            SqlParameter param2 = new SqlParameter("@MoviesTitle", SqlDbType.Text);
+            SqlParameter param3 = new SqlParameter("@RunningTime", SqlDbType.Int);
+            SqlParameter param4 = new SqlParameter("ReleaseDate", SqlDbType.DateTime);
+
+            //supply the values for the parameters
+            param1.Value = movieId;
+            param2.Value = movieTitle;
+            param3.Value = runningTime;
+            param4.Value = releaseDate;
+
+            try
+            {
+                return dataAccess1.ExecNonQuery(sqlQuery, CommandType.Text, param1, param2, param3, param4);
+            }
+            catch (Exception ex)
+            {
+
+                LastError = ex.Message;
+                return -1;
+            }
+        }
     }
 }
