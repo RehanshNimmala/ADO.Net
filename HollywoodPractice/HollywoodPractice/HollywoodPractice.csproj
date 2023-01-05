@@ -47,8 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess.cs" />
-    <Compile Include="MoviesIntermediary.cs" />
+    <Compile Include="Intermediary Class\ActorsIntermediary.cs" />
+    <Compile Include="DataAccessClass\DataAccess.cs" />
+    <Compile Include="Intermediary Class\MoviesIntermediary.cs" />
     <Compile Include="UI Forms\ActorsForm.cs">
       <SubType>Form</SubType>
     </Compile>
