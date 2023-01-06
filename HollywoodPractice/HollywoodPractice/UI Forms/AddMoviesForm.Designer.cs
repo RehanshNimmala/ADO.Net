@@ -44,7 +44,7 @@
             this.movieIDLabel.AutoSize = true;
             this.movieIDLabel.Location = new System.Drawing.Point(44, 36);
             this.movieIDLabel.Name = "movieIDLabel";
-            this.movieIDLabel.Size = new System.Drawing.Size(75, 20);
+            this.movieIDLabel.Size = new System.Drawing.Size(60, 16);
             this.movieIDLabel.TabIndex = 0;
             this.movieIDLabel.Text = "Movie ID";
             // 
@@ -53,7 +53,7 @@
             this.movieTitleLabel.AutoSize = true;
             this.movieTitleLabel.Location = new System.Drawing.Point(44, 99);
             this.movieTitleLabel.Name = "movieTitleLabel";
-            this.movieTitleLabel.Size = new System.Drawing.Size(91, 20);
+            this.movieTitleLabel.Size = new System.Drawing.Size(73, 16);
             this.movieTitleLabel.TabIndex = 1;
             this.movieTitleLabel.Text = "Movie Title";
             // 
@@ -62,7 +62,7 @@
             this.runningTimeLabel.AutoSize = true;
             this.runningTimeLabel.Location = new System.Drawing.Point(44, 178);
             this.runningTimeLabel.Name = "runningTimeLabel";
-            this.runningTimeLabel.Size = new System.Drawing.Size(113, 20);
+            this.runningTimeLabel.Size = new System.Drawing.Size(90, 16);
             this.runningTimeLabel.TabIndex = 2;
             this.runningTimeLabel.Text = "Running Time";
             // 
@@ -71,7 +71,7 @@
             this.releaseDateLabel.AutoSize = true;
             this.releaseDateLabel.Location = new System.Drawing.Point(44, 254);
             this.releaseDateLabel.Name = "releaseDateLabel";
-            this.releaseDateLabel.Size = new System.Drawing.Size(114, 20);
+            this.releaseDateLabel.Size = new System.Drawing.Size(91, 16);
             this.releaseDateLabel.TabIndex = 3;
             this.releaseDateLabel.Text = "Release Date";
             // 
@@ -131,6 +131,7 @@
             this.Controls.Add(this.movieIDLabel);
             this.Name = "AddMoviesForm";
             this.Text = "Add Movies Form";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddMoviesForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

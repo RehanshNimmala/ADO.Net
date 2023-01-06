@@ -31,13 +31,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.moviesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.actorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moviesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moviesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.getBestPicturesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.actorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allActorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -56,8 +56,8 @@
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.moviesToolStripMenuItem,
             this.helpToolStripMenuItem,
+            this.moviesToolStripMenuItem,
             this.actorsToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
@@ -73,6 +73,13 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "&File";
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // moviesToolStripMenuItem
             // 
             this.moviesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -82,6 +89,27 @@
             this.moviesToolStripMenuItem.Name = "moviesToolStripMenuItem";
             this.moviesToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.moviesToolStripMenuItem.Text = "Movies";
+            // 
+            // moviesToolStripMenuItem1
+            // 
+            this.moviesToolStripMenuItem1.Name = "moviesToolStripMenuItem1";
+            this.moviesToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.moviesToolStripMenuItem1.Text = "Movies";
+            this.moviesToolStripMenuItem1.Click += new System.EventHandler(this.moviesToolStripMenuItem1_Click);
+            // 
+            // addNewMovieToolStripMenuItem
+            // 
+            this.addNewMovieToolStripMenuItem.Name = "addNewMovieToolStripMenuItem";
+            this.addNewMovieToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addNewMovieToolStripMenuItem.Text = "Add New Movie";
+            this.addNewMovieToolStripMenuItem.Click += new System.EventHandler(this.addNewMovieToolStripMenuItem_Click);
+            // 
+            // getBestPicturesToolStripMenuItem
+            // 
+            this.getBestPicturesToolStripMenuItem.Name = "getBestPicturesToolStripMenuItem";
+            this.getBestPicturesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.getBestPicturesToolStripMenuItem.Text = "Get Best Pictures";
+            this.getBestPicturesToolStripMenuItem.Click += new System.EventHandler(this.getBestPicturesToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -97,36 +125,12 @@
             this.actorsToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.actorsToolStripMenuItem.Text = "Actors";
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.exitToolStripMenuItem.Text = "E&xit";
-            // 
-            // moviesToolStripMenuItem1
-            // 
-            this.moviesToolStripMenuItem1.Name = "moviesToolStripMenuItem1";
-            this.moviesToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.moviesToolStripMenuItem1.Text = "Movies";
-            // 
-            // addNewMovieToolStripMenuItem
-            // 
-            this.addNewMovieToolStripMenuItem.Name = "addNewMovieToolStripMenuItem";
-            this.addNewMovieToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.addNewMovieToolStripMenuItem.Text = "Add New Movie";
-            // 
-            // getBestPicturesToolStripMenuItem
-            // 
-            this.getBestPicturesToolStripMenuItem.Name = "getBestPicturesToolStripMenuItem";
-            this.getBestPicturesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.getBestPicturesToolStripMenuItem.Text = "Get Best Pictures";
-            this.getBestPicturesToolStripMenuItem.Click += new System.EventHandler(this.getBestPicturesToolStripMenuItem_Click);
-            // 
             // allActorsToolStripMenuItem
             // 
             this.allActorsToolStripMenuItem.Name = "allActorsToolStripMenuItem";
             this.allActorsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.allActorsToolStripMenuItem.Text = "All Actors";
+            this.allActorsToolStripMenuItem.Click += new System.EventHandler(this.allActorsToolStripMenuItem_Click);
             // 
             // HollywoodApplication
             // 
