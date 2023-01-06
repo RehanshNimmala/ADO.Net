@@ -10,23 +10,23 @@ using System.Windows.Forms;
 
 namespace HollywoodPractice
 {
-    public partial class AddMoviesForm : Form
+    public partial class MoviesForm : Form
     {
-        private static AddMoviesForm instance;
-        private AddMoviesForm()
+        private static MoviesForm instance;
+        private MoviesForm()
         {
             InitializeComponent();
         }
-        public static AddMoviesForm AddMoviesFormInstance()
+        public static MoviesForm MoviesFormInstance()
         {
-            if (instance==null)
-                instance = new AddMoviesForm();
+            if(instance == null)
+                instance = new MoviesForm();
             return instance;
         }
 
-        private void AddMoviesForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void MoviesForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            instance=null;
+            instance = null;
         }
     }
 }

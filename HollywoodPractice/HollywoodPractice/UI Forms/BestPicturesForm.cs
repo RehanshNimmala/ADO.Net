@@ -31,10 +31,6 @@ namespace HollywoodPractice
             this.Close();
         }
 
-        private void bestPicturesForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void bestPicturesForm_FormClosing(object sender, FormClosingEventArgs e)
         {

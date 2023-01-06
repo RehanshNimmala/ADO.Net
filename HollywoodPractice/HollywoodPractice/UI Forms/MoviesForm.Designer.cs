@@ -1,6 +1,6 @@
 ﻿namespace HollywoodPractice
 {
-    partial class Movies_Form
+    partial class MoviesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -100,7 +100,7 @@
             this.moviesGridView.Size = new System.Drawing.Size(713, 195);
             this.moviesGridView.TabIndex = 6;
             // 
-            // Movies_Form
+            // MoviesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -112,8 +112,9 @@
             this.Controls.Add(this.showActorsButton);
             this.Controls.Add(this.moviesComboBox);
             this.Controls.Add(this.label1);
-            this.Name = "Movies_Form";
+            this.Name = "MoviesForm";
             this.Text = "MoviesForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MoviesForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.moviesGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

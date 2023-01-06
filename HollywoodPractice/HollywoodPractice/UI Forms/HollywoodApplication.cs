@@ -23,5 +23,32 @@ namespace HollywoodPractice
             BestPicturesForm.MdiParent = this;
             BestPicturesForm.Show();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void allActorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActorsForm actorsForm = ActorsForm.ActorsFormInstance();
+            actorsForm.MdiParent = this;
+            actorsForm.Show();
+
+        }
+
+        private void addNewMovieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddMoviesForm addMoviesForm = AddMoviesForm.AddMoviesFormInstance();
+            addMoviesForm.MdiParent = this;
+            addMoviesForm.Show();
+        }
+
+        private void moviesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MoviesForm moviesForm = MoviesForm.MoviesFormInstance();
+            moviesForm.MdiParent = this;
+            moviesForm.Show();
+        }
     }
 }
