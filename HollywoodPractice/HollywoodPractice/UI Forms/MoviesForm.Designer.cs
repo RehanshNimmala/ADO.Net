@@ -63,6 +63,7 @@
             this.showActorsButton.TabIndex = 2;
             this.showActorsButton.Text = "Show Actors in the movie";
             this.showActorsButton.UseVisualStyleBackColor = true;
+            this.showActorsButton.Click += new System.EventHandler(this.showActorsButton_Click);
             // 
             // countOfMoviesButton
             // 
@@ -72,6 +73,7 @@
             this.countOfMoviesButton.TabIndex = 3;
             this.countOfMoviesButton.Text = "Count Of Movies";
             this.countOfMoviesButton.UseVisualStyleBackColor = true;
+            this.countOfMoviesButton.Click += new System.EventHandler(this.countOfMoviesButton_Click);
             // 
             // exitButton
             // 
@@ -81,6 +83,7 @@
             this.exitButton.TabIndex = 4;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // countLabel
             // 
@@ -115,6 +118,7 @@
             this.Name = "MoviesForm";
             this.Text = "MoviesForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MoviesForm_FormClosing);
+            this.Load += new System.EventHandler(this.MoviesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.moviesGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -36,5 +36,28 @@ namespace HollywoodPractice
         {
             instance = null;
         }
+
+        private void bestPicturesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void bestPicturesForm_Load(object sender, EventArgs e)
+        {
+            //Insatntiate the class
+            MoviesIntermediary moviesIntermediary = new MoviesIntermediary();
+
+            try
+            {
+                bestPicturesDataGridView.DataSource = moviesIntermediary.GetBestPictures();
+                bestPicturesDataGridView.ReadOnly = true;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
