@@ -51,6 +51,7 @@
             this.Name = "ActorsForm";
             this.Text = "Actors Form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ActorsForm_FormClosing);
+            this.Load += new System.EventHandler(this.ActorsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.actorsGridView)).EndInit();
             this.ResumeLayout(false);
 
