@@ -63,6 +63,7 @@
             this.Name = "bestPicturesForm";
             this.Text = "Best Pictures Form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.bestPicturesForm_FormClosing);
+            this.Load += new System.EventHandler(this.bestPicturesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bestPicturesDataGridView)).EndInit();
             this.ResumeLayout(false);
 
