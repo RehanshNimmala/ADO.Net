@@ -29,5 +29,24 @@ namespace HollywoodPractice
         {
             actorsForm=null;
         }
+
+        private void ActorsForm_Load(object sender, EventArgs e)
+        {
+            // Instantiat the intermideary class
+            ActorsIntermediary actorsIntermediary = new ActorsIntermediary();
+
+            try
+            {
+                actorsGridView.DataSource = actorsIntermediary.GetAllActors();//Assigning data to the grid view
+
+                //formatting
+                actorsGridView.ReadOnly = true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
