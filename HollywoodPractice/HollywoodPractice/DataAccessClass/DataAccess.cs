@@ -15,7 +15,7 @@ namespace HollywoodPractice
         private SqlConnection HWConnection;
         //Connection string
 
-        string HWConnString = ConfigurationManager.ConnectionStrings["HollywoodDataApp.properties.Settings.HWConnString"].ConnectionString;
+        string HWConnString = ConfigurationManager.ConnectionStrings["HollywoodPractice.properties.Settings.HWConnString"].ConnectionString;
 
         private SqlConnection GetConnection()
         {
