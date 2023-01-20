@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOLIDPrinciples", "SOLIDPrinciples\SOLIDPrinciples.csproj", "{007833D8-6E84-4D34-8415-F50E247AB267}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SRP", "SRP\SRP.csproj", "{150D129E-9AE8-4C6E-B740-FC97BD399181}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{007833D8-6E84-4D34-8415-F50E247AB267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{007833D8-6E84-4D34-8415-F50E247AB267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{007833D8-6E84-4D34-8415-F50E247AB267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{007833D8-6E84-4D34-8415-F50E247AB267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{150D129E-9AE8-4C6E-B740-FC97BD399181}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{150D129E-9AE8-4C6E-B740-FC97BD399181}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{150D129E-9AE8-4C6E-B740-FC97BD399181}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{150D129E-9AE8-4C6E-B740-FC97BD399181}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B32D3C64-AAA6-45FD-92BA-5804E11B85E4}
+	EndGlobalSection
+EndGlobal
